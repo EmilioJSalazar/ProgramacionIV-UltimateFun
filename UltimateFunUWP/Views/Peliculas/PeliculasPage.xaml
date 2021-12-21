@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="UltimateFunUWP.Views.PeliculasPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UltimateFunUWP.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:Microsoft.UI.Xaml.Controls"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <!--
+                The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                Place your content here.
+            -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Content="Conectar API" Click="Button_Click"/>
+            <Button Content="Crear Nuevo" Margin="0,176,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_1"/>
+            <ListView x:Name="Lista" Grid.Row="0" Grid.Column="1" Padding="0"
+             ContextRequested="ListaButton_ContextRequested" ItemClick="Lista_ItemClick">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="ID" Width="50" Foreground="Cyan"/>
+                            <TextBlock Text="Tipo" Width="100" Foreground="Cyan"/>
+                            <TextBlock Text="Nombre" Width="100" Foreground="Cyan"/>
+                            <TextBlock Text="Lugar de ver" Width="150" Foreground="Cyan"/>
+                            <TextBlock Text="Descripcion" Width="150" Foreground="Cyan"/>
+                            <TextBlock Text="Actores" Width="150" Foreground="Cyan"/>
+                            <TextBlock Text="Director" Width="150" Foreground="Cyan"/>
+                            <TextBlock Text="Duracion" Width="100" Foreground="Cyan"/>
+                            <TextBlock Text="FechaLanzamiento" Width="150" Foreground="Cyan"/>
+                            <TextBlock Text="Imagen" Width="150" Foreground="Cyan"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+
+                <FlyoutBase.AttachedFlyout>
+                    <Custom:CommandBarFlyout Placement="Right" x:Name="CommandBarFlyout1">
+                        <AppBarButton Label="Edit" Icon="Edit" ToolTipService.ToolTip="Edit" Click="OnElementClicked" />
+                        <AppBarButton Label="Details" Icon="View" ToolTipService.ToolTip="Details" Click="OnElementClicked" />
+                        <AppBarButton Label="Delete" Icon="Delete" ToolTipService.ToolTip="Delete" Click="OnElementClicked" />
+                    </Custom:CommandBarFlyout>
+                </FlyoutBase.AttachedFlyout>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:PeliculasViewModel">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Bind PeliculaID}" Width="50"/>
+                            <TextBlock Text="{x:Bind Tipo}" Width="100"/>
+                            <TextBlock Text="{x:Bind Nombre}" Width="100"/>
+                            <TextBlock Text="{x:Bind LugarDeVisualizacion}" Width="150"/>
+                            <TextBlock Text="{x:Bind Descripcion}" Width="150"/>
+                            <TextBlock Text="{x:Bind Actores}" Width="150"/>
+                            <TextBlock Text="{x:Bind Director}" Width="150"/>
+                            <TextBlock Text="{x:Bind Duracion}" Width="100"/>
+                            <TextBlock Text="{x:Bind FechaLanzamiento}" Width="150"/>
+                            <TextBlock Text="{x:Bind Imagen}" Width="150"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
