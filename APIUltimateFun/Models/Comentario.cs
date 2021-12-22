@@ -13,6 +13,7 @@ namespace APIUltimateFun.Models
         public int CancionID { get; set; }
 
         public int VideojuegoID { get; set; }
+        //comentario
 
         public int PeliculaID { get; set; }
 
