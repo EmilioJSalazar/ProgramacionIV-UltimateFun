@@ -71,7 +71,7 @@ namespace UltimateFunUWP.Views
             
 
             var data = new StringContent(content, Encoding.UTF8, "application/json");
-            var httpResponse =  await client.PostAsync("https://localhost:44376/api/canciones", data);
+            var httpResponse =  await client.PostAsync("https://localhost:44344/api/canciones", data);
             if (httpResponse.Content != null)
             {
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();

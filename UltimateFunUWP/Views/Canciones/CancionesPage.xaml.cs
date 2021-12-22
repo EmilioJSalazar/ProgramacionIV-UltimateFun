@@ -29,7 +29,7 @@ namespace UltimateFunUWP.Views
         {
             var httpHandler = new HttpClientHandler();
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://localhost:44376/api/canciones");
+            request.RequestUri = new Uri("https://localhost:44344/api/canciones");
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
 

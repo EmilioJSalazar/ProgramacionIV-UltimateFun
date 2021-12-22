@@ -60,7 +60,7 @@ namespace UltimateFunUWP.Views.Videojuegos
 
 
             var data = new StringContent(content, Encoding.UTF8, "application/json");
-            var httpResponse = await client.PostAsync("https://localhost:44376/api/videojuegos", data);
+            var httpResponse = await client.PostAsync("https://localhost:44344/api/videojuegos", data);
             if (httpResponse.Content != null)
             {
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();

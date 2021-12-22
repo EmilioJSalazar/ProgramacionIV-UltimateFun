@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateFunUWP", "UltimateF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateFunUWP.Core", "UltimateFunUWP.Core\UltimateFunUWP.Core.csproj", "{40EB066D-7876-43D0-BC17-496D728C574E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIUltimateFun", "APIUltimateFun\APIUltimateFun.csproj", "{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,26 @@ Global
 		{40EB066D-7876-43D0-BC17-496D728C574E}.Release|x64.Build.0 = Release|Any CPU
 		{40EB066D-7876-43D0-BC17-496D728C574E}.Release|x86.ActiveCfg = Release|Any CPU
 		{40EB066D-7876-43D0-BC17-496D728C574E}.Release|x86.Build.0 = Release|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Debug|ARM.Build.0 = Debug|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Debug|x64.Build.0 = Debug|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Debug|x86.Build.0 = Debug|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Release|ARM.ActiveCfg = Release|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Release|ARM.Build.0 = Release|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Release|ARM64.Build.0 = Release|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Release|x64.ActiveCfg = Release|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Release|x64.Build.0 = Release|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Release|x86.ActiveCfg = Release|Any CPU
+		{511EF4B1-FDD4-4C07-BD94-ED19485DE2AE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
