@@ -68,6 +68,7 @@
                             <TextBlock Text="{x:Bind Path=Genero}" Width="100"/>
                             <TextBlock Text="{x:Bind Path=FechaLanzamiento}" Width="150"/>
                             <Image Source="{x:Bind Path=CurrentImage}" Width="150" Height="150"/>
+                            <!--holiiiii-->
                             <!--<Image Source="/Assets/LockScreenLogo.scale-200.png" Width="150" Height="150"/>-->
                             <!--<TextBlock Text="{x:Bind Imagen, Mode=TwoWay}" Width="150"/>-->
                         </StackPanel>

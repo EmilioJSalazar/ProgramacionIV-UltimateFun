@@ -9,7 +9,7 @@
 
   <Identity
     Name="3AD46C60-22BE-4BDC-AF4D-AE45B6312490"
-    Publisher="CN=Emgot"
+    Publisher="CN=Dell"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="3AD46C60-22BE-4BDC-AF4D-AE45B6312490" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
