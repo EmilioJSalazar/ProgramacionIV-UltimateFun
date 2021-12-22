@@ -15,6 +15,7 @@ namespace APIUltimateFun.Models
         }
 
         public int PeliculaID { get; set; }
+        // comentarioooPeliculaaa
 
         public int Tipo { get; set; }
 
