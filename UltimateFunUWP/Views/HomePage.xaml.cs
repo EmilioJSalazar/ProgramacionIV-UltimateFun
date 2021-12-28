@@ -17,5 +17,27 @@ namespace UltimateFunUWP.Views
             InitializeComponent();
         }
 
+        private void TextBlock_SelectionChanged(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(PeliculasPage));
+
+        }
+
+        private void Button_Click_1(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(VideojuegosPage));
+
+        }
+
+        private void Button_Click_2(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CancionesPage));
+
+        }
     }
 }

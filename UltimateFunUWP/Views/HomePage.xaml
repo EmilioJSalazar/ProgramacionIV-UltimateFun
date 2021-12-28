@@ -10,12 +10,27 @@
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
         <Grid
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            
+
+            <TextBlock HorizontalAlignment="Left" Margin="228,114,0,0" Text="Ultimate Fun" TextWrapping="Wrap" FontSize="80" VerticalAlignment="Top" Width="498" Height="110" Foreground="Orange" SelectionChanged="TextBlock_SelectionChanged"/>
+            <TextBlock HorizontalAlignment="Left" Margin="31,244,0,0" Text="Es una página web donde podrás encontrar los títulos de las últimas tendencias en el mundo del entretenimiento o sus próximos lanzamientos y así puedas decidir  fácilmente la opción más divertida y entretenida de pasar tu día, tarde o noche!  Así que…….. ¿Qué deseas hacer hoy?" TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" Width="1052" Height="233" SelectionChanged="TextBlock_SelectionChanged"/>
+
+
+            <Image Source="Imagenes/homero.png" Height="100" Width="100"/>
+            <Button Content="PELICULAS Y SERIES"  FontSize="25" Foreground="HotPink" Margin="143,618,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+            <Button Content="VIDEOJUEGOS" FontSize="25" Foreground="Violet" Margin="502,618,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+            <Button Content="CANCIONES" FontSize="25" Foreground="Wheat" Margin="868,618,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.027,0.058" Click="Button_Click_2"/>
+
+
+
+
+
+
             <!--
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
             -->
 
         </Grid>
+
     </Grid>
 </Page>
