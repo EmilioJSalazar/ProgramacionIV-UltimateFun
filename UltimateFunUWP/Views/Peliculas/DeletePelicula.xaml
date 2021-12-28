@@ -9,6 +9,101 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
 
+            <RowDefinition Height="80"/>
+
+            <RowDefinition Height="360"/>
+
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+
+            <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center">Eliminar Cancion</TextBlock>
+
+            <TextBlock FontStyle="Italic" HorizontalAlignment="Center">¿Estás seguro de eliminar este elemento?</TextBlock>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="0,0,0,10" Grid.RowSpan="2">
+
+            <Grid Height="310" Margin="20, 10, 10, 0">
+
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="140"/>
+
+                    <ColumnDefinition />
+
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,0,-20" d:LayoutOverrides="TopPosition, BottomPosition">
+
+                    <TextBlock Margin="0, 10, 0, 8">
+
+                            <Run Text="Tipo"/>
+
+                    </TextBlock>
+
+                    <TextBlock Margin="0, 6, 0, 8">
+
+                            <Run Text="Nombre"/>
+
+                    </TextBlock>
+
+                    <TextBlock Margin="0, 7, 0, 6">
+
+                            <Run Text="Dónde Visualizar"/>
+
+                    </TextBlock>
+
+                    <TextBlock Margin="0, 10, 0, 0">
+
+                            <Run Text="Descrípción"/>
+
+                    </TextBlock>
+
+                    <TextBlock Margin="0, 10, 0, 0">
+
+                            <Run Text="Actores"/>
+
+                    </TextBlock>
+
+                    <TextBlock Margin="0, 20, 0, 0">
+
+                            <Run Text="Director"/>
+
+                    </TextBlock>
+
+                    <TextBlock Margin="0, 20, 0, 0">
+
+                            <Run Text="Duración"/>
+
+                    </TextBlock>
+
+                    <TextBlock Margin="0, 20, 0, 0">
+
+                            <Run Text="FechaDeLanzamiento"/>
+
+                    </TextBlock>
+
+                    <TextBlock Margin="0, 20, 0, 0">
+
+                            <Run Text="Imagen"/>
+
+                    </TextBlock>
+
+                </StackPanel>
+
+
+                <Button x:Name="actionButton" Margin="133,0,0,-92" Click="Button_Click" VerticalAlignment="Bottom" Content="Delete" Grid.ColumnSpan="2"/>
+
+            </Grid>
+
+            <Button Margin="20, 0, 0, -150" Click="Button_Click">Cancel</Button>
+
+        </StackPanel>
     </Grid>
 </Page>
