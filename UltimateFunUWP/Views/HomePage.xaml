@@ -6,19 +6,49 @@
     xmlns:Custom="using:Microsoft.UI.Xaml.Controls"
     x:Class="UltimateFunUWP.Views.HomePage"
     Style="{StaticResource PageStyle}"
-    mc:Ignorable="d">
-    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+    mc:Ignorable="d" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" Width="1438">
+
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
         <Grid
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" HorizontalAlignment="Center" Width="1390">
 
-            <TextBlock HorizontalAlignment="Left" Margin="228,114,0,0" Text="Ultimate Fun" TextWrapping="Wrap" FontSize="80" VerticalAlignment="Top" Width="498" Height="110" Foreground="Orange" SelectionChanged="TextBlock_SelectionChanged"/>
-            <TextBlock HorizontalAlignment="Left" Margin="31,244,0,0" Text="Es una página web donde podrás encontrar los títulos de las últimas tendencias en el mundo del entretenimiento o sus próximos lanzamientos y así puedas decidir  fácilmente la opción más divertida y entretenida de pasar tu día, tarde o noche!  Así que…….. ¿Qué deseas hacer hoy?" TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" Width="1052" Height="233" SelectionChanged="TextBlock_SelectionChanged"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="1452"/>
+                <ColumnDefinition Width="0*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <RelativePanel Grid.Column="0" Margin="0,0,10,0" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <Grid x:Name="homero" Width ="1522" Height="928" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                    <Grid.Background>
+                        <LinearGradientBrush >
+                            <GradientStop Color="LightYellow" Offset="0.234"/>
+                            <GradientStop Color="LightCoral" Offset="1.234"/>
+
+                        </LinearGradientBrush>
+                    </Grid.Background>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="406,0,0,0" Text="Ultimate Fun" TextWrapping="Wrap" FontSize="80" VerticalAlignment="Top" Width="498" Height="110" Foreground="Orange" SelectionChanged="TextBlock_SelectionChanged" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,116,0,0" Text="Es una página web donde podrás encontrar los títulos de las últimas tendencias en el mundo del entretenimiento o sus próximos lanzamientos y así puedas decidir  fácilmente la opción más divertida y entretenida de pasar tu día, tarde o noche!  Así que…….. ¿Qué deseas hacer hoy?" TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" Width="1052" Height="233" SelectionChanged="TextBlock_SelectionChanged"/>
 
 
-            <Image Source="Imagenes/homero.png" Height="100" Width="100"/>
-            <Button Content="PELICULAS Y SERIES"  FontSize="25" Foreground="HotPink" Margin="143,618,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-            <Button Content="VIDEOJUEGOS" FontSize="25" Foreground="Violet" Margin="502,618,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
-            <Button Content="CANCIONES" FontSize="25" Foreground="Wheat" Margin="868,618,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.027,0.058" Click="Button_Click_2"/>
+                    <Image Source="/Assets/homero-PhotoRoom.png" Margin="-26,365,1013,271"/>
+                </Grid>
+            </RelativePanel>
+            <Button Content="PELICULAS Y SERIES"  FontSize="25" Foreground="HotPink" Margin="471,331,0,0" Click="Button_Click" Height="46" Width="239" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="794,314,0,0" Text="Aquí encontrarás las tendencias del momento y proximos estrenos." TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" Width="595" Height="137" SelectionChanged="TextBlock_SelectionChanged" RenderTransformOrigin="0.647,0.276"/>
+
+            <Button Content="VIDEOJUEGOS" FontSize="25" Foreground="Violet" Margin="471,453,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="46" Width="239"/>
+            <TextBlock HorizontalAlignment="Left" Margin="794,436,0,0" Text="Aquí encontrarás los videojuegos más virales en el mundo del gaming." TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" Width="570" Height="137" SelectionChanged="TextBlock_SelectionChanged"/>
+
+            <Button Content="CANCIONES" FontSize="25" Foreground="Wheat" Margin="471,580,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.027,0.058" Click="Button_Click_2" Height="46" Width="239"/>
+            <TextBlock HorizontalAlignment="Left" Margin="794,566,0,0" Text="Aquí encontrarás los éxitos musicales de todo tipo de género más escuchados en el momento." TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" Width="549" Height="176" SelectionChanged="TextBlock_SelectionChanged"/>
+
 
 
 
@@ -29,8 +59,8 @@
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
             -->
-
         </Grid>
+
 
     </Grid>
 </Page>
