@@ -111,6 +111,7 @@ namespace UltimateFunUWP.Views
             var song= ((FrameworkElement)e.OriginalSource).DataContext as CancionesViewModel;
             cancionSeleccionada = song.CancionID;
             DetailsCancion.detalleSong = song.CancionID;
+            EditCancion.EditarCancion = song.CancionID;
 
         }
 
@@ -161,6 +162,7 @@ namespace UltimateFunUWP.Views
         }
         private void Edit_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
+            Frame.Navigate(typeof(EditCancion));
 
         }
 
