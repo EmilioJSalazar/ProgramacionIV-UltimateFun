@@ -21,9 +21,9 @@
 
         <StackPanel Grid.Row="0">
 
-            <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" SelectionChanged="TextBlock_SelectionChanged">Detalles Pelicula/Serie</TextBlock>
+            <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center">Detalles Videojuegos</TextBlock>
 
-            <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Estos son los detalles de la Pelicula/Serie seleccionada</TextBlock>
+            <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Estos son los detalles del Videojuego seleccionada</TextBlock>
 
         </StackPanel>
 
@@ -39,7 +39,7 @@
 
                 </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="0,0,0,-20" d:LayoutOverrides="TopPosition, BottomPosition">
+                <StackPanel Grid.Column="0" Margin="0,10,0,141">
 
                     <TextBlock Margin="0, 10, 0, 8">
 
