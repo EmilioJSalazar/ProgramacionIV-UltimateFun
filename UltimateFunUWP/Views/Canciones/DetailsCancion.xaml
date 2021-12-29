@@ -9,101 +9,119 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid.RowDefinitions>
+        <Grid FocusVisualPrimaryBrush="#FF5FB39C">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2E9EBA"/>
+                    <GradientStop Color="#FF70AE7C" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
 
-            <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
 
-            <RowDefinition Height="360"/>
+                <RowDefinition Height="360"/>
 
-            <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
 
-        </Grid.RowDefinitions>
+            </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0">
+            <StackPanel Grid.Row="0">
 
-            <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" SelectionChanged="TextBlock_SelectionChanged">Detalles Cancion</TextBlock>
+                <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" SelectionChanged="TextBlock_SelectionChanged">Detalles Cancion</TextBlock>
 
-            <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Estos son los detalles de la cancion seleccionada</TextBlock>
+                <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Estos son los detalles de la cancion seleccionada</TextBlock>
 
-        </StackPanel>
+            </StackPanel>
 
-        <StackPanel Grid.Row="1" Margin="0,0,0,10" Grid.RowSpan="2">
+            <StackPanel Grid.Row="1" Margin="0,0,0,10" Grid.RowSpan="2">
 
-            <Grid Height="405" Margin="20, 10, 10, 0">
+                <Grid Height="405" Margin="20, 10, 10, 0">
 
-                <Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
 
-                    <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="140"/>
 
-                    <ColumnDefinition />
+                        <ColumnDefinition />
 
-                </Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="0,0,0,-20" d:LayoutOverrides="TopPosition, BottomPosition">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,-20" d:LayoutOverrides="TopPosition, BottomPosition">
 
-                    <TextBlock Margin="0, 10, 0, 8">
+                        <TextBlock Margin="0, 10, 0, 8">
 
                             <Run Text="Nombre"/>
 
-                    </TextBlock>
+                        </TextBlock>
 
-                    <TextBlock Margin="0, 6, 0, 8">
+                        <TextBlock Margin="0, 6, 0, 8">
 
                             <Run Text="DóndeEscuchar"/>
 
-                    </TextBlock>
+                        </TextBlock>
 
-                    <TextBlock Margin="0, 7, 0, 6">
+                        <TextBlock Margin="0, 7, 0, 6">
 
                             <Run Text="Descripción"/>
 
-                    </TextBlock>
+                        </TextBlock>
 
-                    <TextBlock Margin="0, 10, 0, 0">
+                        <TextBlock Margin="0, 10, 0, 0">
 
                             <Run Text="Artista"/>
 
-                    </TextBlock>
+                        </TextBlock>
 
-                    <TextBlock Margin="0, 10, 0, 0">
+                        <TextBlock Margin="0, 10, 0, 0">
 
                             <Run Text="Album"/>
 
-                    </TextBlock>
+                        </TextBlock>
 
-                    <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="0, 20, 0, 0">
 
                             <Run Text="Duración"/>
 
-                    </TextBlock>
+                        </TextBlock>
 
-                    <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="0, 20, 0, 0">
 
                             <Run Text="Género"/>
 
-                    </TextBlock>
+                        </TextBlock>
 
-                    <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="0, 20, 0, 0">
 
                             <Run Text="FechaDeLanzamiento"/>
 
-                    </TextBlock>
+                        </TextBlock>
 
-                    <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="0, 20, 0, 0">
 
                             <Run Text="Imagen"/>
 
-                    </TextBlock>
+                        </TextBlock>
 
-                </StackPanel>
-               
+                    </StackPanel>
+                    <TextBlock x:Name="nombre"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="335"/>
+                    <TextBlock x:Name="dondeEscuchar"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,40,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="335"/>
+                    <TextBlock x:Name="desc"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,85,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="335"/>
+                    <TextBlock x:Name="artista"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,119,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="335"/>
+                    <TextBlock x:Name="album"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,152,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="335"/>
+                    <TextBlock x:Name="duracion"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,184,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="335"/>
+                    <TextBlock x:Name="genero"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,224,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="335"/>
+                    <TextBlock x:Name="fecha"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,263,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="335"/>
+                    <TextBlock x:Name="imagen"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,298,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="335"/>
 
 
 
-            </Grid>
 
-            <Button Margin="20, 0, 0, -150" Click="Button_Click">Regresar</Button>
+                </Grid>
 
-        </StackPanel>
+                <Button Margin="20, 0, 0, -150" Click="Button_Click">Regresar</Button>
+
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </Page>

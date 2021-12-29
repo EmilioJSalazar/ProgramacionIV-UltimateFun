@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Navigation;
 //using Windows.Web.Http;
 using Windows.Storage.Streams;
 using System.Text;
+using Windows.UI.Xaml.Media.Imaging;
 
 //using Windows.Web.Http;
 
@@ -101,7 +102,7 @@ namespace UltimateFunUWP.Views
                 
             }
             this.byteimage = imageByte;
-            
+//bitmap            
         }
         private async void Imagen_Click(object sender, RoutedEventArgs e)
         {

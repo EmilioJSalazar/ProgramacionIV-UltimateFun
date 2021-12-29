@@ -9,7 +9,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid FocusVisualPrimaryBrush="#FF5FB39C">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2E9EBA"/>
+                    <GradientStop Color="#FF70AE7C" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
 
             <Grid.RowDefinitions>
 
@@ -84,7 +90,7 @@
                             <Run Text="Género"/>
 
                         </TextBlock>
-                        
+
                         <TextBlock Margin="0, 20, 0, 0">
 
                             <Run Text="FechaDeLanzamiento"/>
