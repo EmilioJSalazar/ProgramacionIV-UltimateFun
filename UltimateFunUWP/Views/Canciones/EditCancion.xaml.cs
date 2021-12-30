@@ -125,7 +125,7 @@ namespace UltimateFunUWP.Views.Canciones
                 Frame.Navigate(typeof(CancionesPage));
                 return;
             }
-            var cancion = new CancionesViewModel
+            var EditarCancion = new CancionesViewModel
             {
                 Nombre = Nombre.Text,
 
@@ -146,13 +146,14 @@ namespace UltimateFunUWP.Views.Canciones
                 Imagen = byteimage
             };
 
-            var client = new HttpClient();
-
-            var content = JsonConvert.SerializeObject(cancion);
+            var httpHandler = new HttpClientHandler();
+            var client = new HttpClient(httpHandler);
+            var content = JsonConvert.SerializeObject(EditarCancion);
 
 
             var data = new StringContent(content, Encoding.UTF8, "application/json");
-            var httpResponse = await client.PostAsync("https://localhost:44344/api/canciones", data);
+
+            var httpResponse = await client.PutAsync("https://localhost:44344/api/canciones"+"/"+EditarCancion, data);
             if (httpResponse.Content != null)
             {
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();

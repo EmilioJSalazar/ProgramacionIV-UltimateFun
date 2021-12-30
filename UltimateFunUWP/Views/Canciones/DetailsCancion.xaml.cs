@@ -26,7 +26,6 @@ namespace UltimateFunUWP.Views.Canciones
     public sealed partial class DetailsCancion : Page
     {
         public static int detalleSong;
-        public static CancionesPage canc;
         public DetailsCancion()
         {
             this.InitializeComponent();
