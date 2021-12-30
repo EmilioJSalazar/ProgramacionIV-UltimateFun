@@ -31,7 +31,7 @@
 
                 <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center">Crear Cancion</TextBlock>
 
-                <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Update the following form and submit. It would update the current data source in Web API.</TextBlock>
+                <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Inserte los datos de la cancion que desea crear</TextBlock>
 
             </StackPanel>
 
