@@ -46,7 +46,7 @@
             </Button>
 
             <ListView x:Name="Lista" Grid.Row="0" Grid.ColumnSpan="2" Margin="150,0,0,-405" Padding="0"
-              ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" RightTapped="Lista_RightTapped ">
+              ScrollViewer.HorizontalScrollBarVisibility="Visible"  ScrollViewer.VerticalScrollBarVisibility="Visible" RightTapped="Lista_RightTapped ">
                 <ListView.Resources>
                     <MenuFlyout x:Name="menu">
                         <MenuFlyout.Items>
