@@ -60,8 +60,7 @@ namespace UltimateFunUWP.Views.Peliculas
             director.Text = resultado.Director;
             duracion.Text = resultado.Duracion.ToString();
             fecha.Text = resultado.FechaLanzamiento.ToString();
-            
-            //imageN.Text = resultado.Imagen.ToString();
+            imageN.Text = resultado.Imagen.ToString();
 
 
         }
