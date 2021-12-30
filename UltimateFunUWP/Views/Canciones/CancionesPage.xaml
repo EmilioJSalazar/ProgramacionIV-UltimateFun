@@ -9,7 +9,7 @@
     x:Class="UltimateFunUWP.Views.CancionesPage"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
         <Grid.BorderBrush>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
@@ -63,16 +63,16 @@
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="ID" Width="50" Foreground="White" FontWeight="Bold" FontFamily="Baskerville Old Face"/>
-                            <TextBlock Text="Nombre" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Baskerville Old Face"/>
-                            <TextBlock Text="Lugar de escuchar" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Baskerville Old Face"/>
-                            <TextBlock Text="Descripcion" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Baskerville Old Face"/>
-                            <TextBlock Text="Artista" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Baskerville Old Face"/>
-                            <TextBlock Text="Album" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Baskerville Old Face"/>
-                            <TextBlock Text="Duracion" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Baskerville Old Face"/>
-                            <TextBlock Text="Genero" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Baskerville Old Face"/>
-                            <TextBlock Text="FechaLanzamiento" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Baskerville Old Face"/>
-                            <TextBlock Text="Imagen" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Baskerville Old Face"/>
+                            <TextBlock Text="ID" Width="50" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Nombre" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Lugar de escuchar" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Descripcion" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Artista" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Album" Width="150" Foreground="White" FontWeight="Bold"  FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Duracion" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Genero" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="FechaLanzamiento" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Imagen" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.HeaderTemplate>
