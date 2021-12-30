@@ -27,9 +27,9 @@
 
         <StackPanel Grid.Row="0">
 
-            <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center">Crear Cancion</TextBlock>
+            <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center">Crear Pelicula/Serie</TextBlock>
 
-            <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Update the following form and submit. It would update the current data source in Web API.</TextBlock>
+            <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Inserte los datos de la Pelicula/Serie que desea crear</TextBlock>
 
         </StackPanel>
 
