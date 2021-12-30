@@ -1,6 +1,9 @@
 ﻿using System;
 
 using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Windows.Storage.Streams;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace UltimateFunUWP.ViewModels
 {
@@ -25,6 +28,9 @@ namespace UltimateFunUWP.ViewModels
         public DateTime FechaLanzamiento { get; set; }
 
         public byte[] Imagen { get; set; }
+
+
+
         public PeliculasViewModel()
         {
         }
