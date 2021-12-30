@@ -112,7 +112,7 @@ namespace UltimateFunUWP.Views
             var song= ((FrameworkElement)e.OriginalSource).DataContext as CancionesViewModel;
             cancionSeleccionada = song.CancionID;
             DetailsCancion.detalleSong = song.CancionID;
-            EditCancion.EditarCancion = song.CancionID;
+            EditCancion.EditarCancionID = song.CancionID;
 
         }
 

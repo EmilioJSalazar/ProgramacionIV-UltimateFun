@@ -29,7 +29,7 @@ namespace UltimateFunUWP.Views.Canciones
     /// </summary>
     public sealed partial class EditCancion : Page
     {
-        public static int EditarCancion;
+        public static int EditarCancionID;
 
         public EditCancion()
         {
@@ -43,7 +43,7 @@ namespace UltimateFunUWP.Views.Canciones
         {
             var httpHandler = new HttpClientHandler();
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://localhost:44344/api/canciones" + "/" + EditarCancion);
+            request.RequestUri = new Uri("https://localhost:44344/api/canciones" + "/" + EditarCancionID);
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
 
@@ -127,6 +127,8 @@ namespace UltimateFunUWP.Views.Canciones
             }
             var EditarCancion = new CancionesViewModel
             {
+                CancionID=EditarCancionID,
+
                 Nombre = Nombre.Text,
 
                 LugarDeEscuchar = DondeEscuchar.Text,
@@ -153,7 +155,7 @@ namespace UltimateFunUWP.Views.Canciones
 
             var data = new StringContent(content, Encoding.UTF8, "application/json");
 
-            var httpResponse = await client.PutAsync("https://localhost:44344/api/canciones"+"/"+EditarCancion, data);
+            var httpResponse = await client.PutAsync("https://localhost:44344/api/canciones"+"/"+EditarCancionID, data);
             if (httpResponse.Content != null)
             {
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();
