@@ -22,6 +22,8 @@ using Windows.UI.Xaml.Navigation;
 
 namespace UltimateFunUWP.Views.Canciones
 {
+
+    //COMENTARIO PRUEBA
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -60,11 +62,6 @@ namespace UltimateFunUWP.Views.Canciones
             Genero.Text = resultado.Genero;
             FechaDeLanzamiento.Text = resultado.FechaLanzamiento.ToString();
             imagen.Text = resultado.Imagen.ToString();
-
-
-
-
-
 
 
         }
@@ -148,6 +145,7 @@ namespace UltimateFunUWP.Views.Canciones
 
                 Imagen = byteimage
             };
+
             var client = new HttpClient();
 
             var content = JsonConvert.SerializeObject(cancion);
@@ -163,6 +161,8 @@ namespace UltimateFunUWP.Views.Canciones
             Frame.Navigate(typeof(CancionesPage));
 
         }
+    
+
     }
 
 
