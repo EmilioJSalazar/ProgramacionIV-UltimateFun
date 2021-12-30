@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
+using UltimateFunUWP.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,13 +26,49 @@ namespace UltimateFunUWP.Views.Peliculas
     /// </summary>
     public sealed partial class DetailsPelicula : Page
     {
+        public static int detallePeli;
+
+
+
         public DetailsPelicula()
         {
             this.InitializeComponent();
+            cargarInforfacion();
         }
 
-        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+
+        public async void cargarInforfacion()
         {
+            var httpHandler = new HttpClientHandler();
+            var request = new HttpRequestMessage();
+            request.RequestUri = new Uri("https://localhost:44344/api/peliculas" + "/" + detallePeli);
+            request.Method = HttpMethod.Get;
+            request.Headers.Add("Accept", "application/json");
+
+            var client = new HttpClient(httpHandler);
+
+            HttpResponseMessage response = await client.SendAsync(request);
+
+            string content = await response.Content.ReadAsStringAsync();
+            var resultado = JsonConvert.DeserializeObject<PeliculasViewModel>(content);
+            
+            string tip = resultado.Tipo.ToString();
+            if (tip == "0")
+            {
+                tipo.Text = "Pelicula";
+            }
+            else
+            {
+                tipo.Text = "Serie";
+            }
+            nombre.Text = resultado.Nombre;
+            dondeVisualizar.Text = resultado.LugarDeVisualizacion;
+            desc.Text = resultado.Descripcion;
+            actores.Text = resultado.Actores;
+            director.Text = resultado.Director;
+            duracion.Text = resultado.Duracion.ToString();
+            fecha.Text = resultado.FechaLanzamiento.ToString();
+            imageN.Text = resultado.Imagen.ToString();
 
         }
 
@@ -38,4 +78,5 @@ namespace UltimateFunUWP.Views.Peliculas
 
         }
     }
+        
 }

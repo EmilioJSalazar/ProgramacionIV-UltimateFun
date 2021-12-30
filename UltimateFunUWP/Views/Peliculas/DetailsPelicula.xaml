@@ -7,8 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFA7F194"/>
+                <GradientStop Color="#FFF6DAB5" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
 
             <RowDefinition Height="80"/>
@@ -21,7 +26,7 @@
 
         <StackPanel Grid.Row="0">
 
-            <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" SelectionChanged="TextBlock_SelectionChanged">Detalles Pelicula/Serie</TextBlock>
+            <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" >Detalles Pelicula/Serie</TextBlock>
 
             <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Estos son los detalles de la Pelicula/Serie seleccionada</TextBlock>
 
@@ -59,13 +64,13 @@
 
                     </TextBlock>
 
-                    <TextBlock Margin="0, 10, 0, 0">
+                    <TextBlock Margin="0, 10, 0, 0" Height="65">
 
                             <Run Text="Descrípción"/>
 
                     </TextBlock>
 
-                    <TextBlock Margin="0, 10, 0, 0">
+                    <TextBlock Margin="0, 10, 0, 0" Height="26">
 
                             <Run Text="Actores"/>
 
@@ -96,7 +101,15 @@
                     </TextBlock>
 
                 </StackPanel>
-
+                <TextBlock x:Name="tipo"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                <TextBlock x:Name="nombre"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,40,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                <TextBlock x:Name="dondeVisualizar"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,73,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1196"/>
+                <TextBlock x:Name="desc"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,112,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1321"/>
+                <TextBlock x:Name="actores"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,184,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                <TextBlock x:Name="director"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,224,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                <TextBlock x:Name="duracion"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,264,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                <TextBlock x:Name="fecha"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,314,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                <TextBlock x:Name="imageN"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,360,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
 
 
 
@@ -106,4 +119,6 @@
 
         </StackPanel>
     </Grid>
+
+
 </Page>

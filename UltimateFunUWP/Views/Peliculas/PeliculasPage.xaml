@@ -9,8 +9,13 @@
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF2F9A1"/>
+                    <GradientStop Color="#FF9F822A" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <!--
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
@@ -24,32 +29,45 @@
             </Grid.ColumnDefinitions>
             <Button Grid.Row="0" Grid.Column="0" Content="Conectar API" Click="Button_Click"/>
             <Button Content="Crear Nuevo" Margin="0,176,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_1"/>
-            <ListView x:Name="Lista" Grid.Row="0" Grid.Column="1" Padding="0"
-             ContextRequested="ListaButton_ContextRequested" ItemClick="Lista_ItemClick">
+            <ListView x:Name="Lista" Grid.Row="0" Padding="0" Grid.ColumnSpan="2" Margin="150,0,0,-643"
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" RightTapped="Lista_RightTapped">
+                <ListView.Resources>
+                    <MenuFlyout x:Name="menu">
+                        <MenuFlyout.Items>
+                            <MenuFlyoutItem x:Name="Details" Text="Details" Click="Details_Click" Icon="View"/>
+                            <MenuFlyoutItem x:Name="Delete" Text="Delete" Click="Delete_Click" Icon="Delete"/>
+                            <MenuFlyoutItem x:Name="Edit" Text="Edit" Click="Edit_Click" Icon="Edit"/>
+
+
+                        </MenuFlyout.Items>
+                    </MenuFlyout>
+
+                </ListView.Resources>
+
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="ID" Width="50" Foreground="Cyan"/>
-                            <TextBlock Text="Tipo" Width="100" Foreground="Cyan"/>
-                            <TextBlock Text="Nombre" Width="100" Foreground="Cyan"/>
-                            <TextBlock Text="Lugar de ver" Width="150" Foreground="Cyan"/>
-                            <TextBlock Text="Descripcion" Width="150" Foreground="Cyan"/>
-                            <TextBlock Text="Actores" Width="150" Foreground="Cyan"/>
-                            <TextBlock Text="Director" Width="150" Foreground="Cyan"/>
-                            <TextBlock Text="Duracion" Width="100" Foreground="Cyan"/>
-                            <TextBlock Text="FechaLanzamiento" Width="150" Foreground="Cyan"/>
-                            <TextBlock Text="Imagen" Width="150" Foreground="Cyan"/>
+                            <TextBlock Text="ID" Width="50" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Tipo" Width="100" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Nombre" Width="100" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Lugar de ver" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Descripcion" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Actores" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Director" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Duracion" Width="100" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="FechaLanzamiento" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Imagen" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.HeaderTemplate>
 
-                <FlyoutBase.AttachedFlyout>
+                <!--<FlyoutBase.AttachedFlyout>
                     <Custom:CommandBarFlyout Placement="Right" x:Name="CommandBarFlyout1">
                         <AppBarButton Label="Edit" Icon="Edit" ToolTipService.ToolTip="Edit" Click="OnElementClicked" />
                         <AppBarButton Label="Details" Icon="View" ToolTipService.ToolTip="Details" Click="OnElementClicked" />
                         <AppBarButton Label="Delete" Icon="Delete" ToolTipService.ToolTip="Delete" Click="OnElementClicked" />
                     </Custom:CommandBarFlyout>
-                </FlyoutBase.AttachedFlyout>
+                </FlyoutBase.AttachedFlyout>-->
 
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:PeliculasViewModel">

@@ -32,38 +32,37 @@ namespace UltimateFunUWP.Views.Peliculas
             this.InitializeComponent();
         }
         byte[] byteimage = null;
-
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             if ((sender as Button).Content.ToString() == "Cancel")
             {
-                Frame.Navigate(typeof(CancionesPage));
+                Frame.Navigate(typeof(PeliculasPage));
                 return;
             }
-            var cancion = new PeliculasViewModel
+            var movie = new PeliculasViewModel
             {
-                Tipo = int.Parse(Tipo.Text.ToString()),
+                Tipo = int.Parse(tipo.Text.ToString()),
 
-                Nombre = Nombre.Text,
+                Nombre = nombre.Text,
 
-                LugarDeVisualizacion = DondeVisualizar.Text,
+                LugarDeVisualizacion = dondeVisualizar.Text,
 
-                Descripcion = Descripcion.Text,
+                Descripcion = desc.Text,
 
-                Actores = Actores.Text,
+                Actores = actores.Text,
 
-                Director = Director.Text,
+                Director = director.Text,
 
-                Duracion = int.Parse(Duracion.Text.ToString()),
+                Duracion = int.Parse(duracion.Text.ToString()),
 
-                FechaLanzamiento = DateTime.Parse(FechaDeLanzamiento.Text.ToString()),
+                FechaLanzamiento = DateTime.Parse(fecha.Text.ToString()),
 
                 Imagen = byteimage
             };
             //Create a traves de Post
             var client = new HttpClient();
 
-            var content = JsonConvert.SerializeObject(cancion);
+            var content = JsonConvert.SerializeObject(movie);
 
 
             var data = new StringContent(content, Encoding.UTF8, "application/json");
@@ -73,7 +72,7 @@ namespace UltimateFunUWP.Views.Peliculas
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();
             }
 
-            Frame.Navigate(typeof(CancionesPage));
+            Frame.Navigate(typeof(PeliculasPage));
         }
 
         private async void SerializarAsync(Windows.Storage.StorageFile file)
@@ -120,5 +119,14 @@ namespace UltimateFunUWP.Views.Peliculas
             SerializarAsync(file);
 
         }
+
+        private void Button_ClickCancel(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(PeliculasPage));
+
+        }
     }
-}
+
+
+}  
+
