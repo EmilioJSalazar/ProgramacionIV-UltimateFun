@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UltimateFunUWP.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,11 +25,45 @@ namespace UltimateFunUWP.Views.Videojuegos
     /// </summary>
     public sealed partial class DetailsVideojuego : Page
     {
+        public static int detallejuego;
+
         public DetailsVideojuego()
         {
             this.InitializeComponent();
+            cargarInforfacion();
         }
+        public async void cargarInforfacion()
+        {
+            var httpHandler = new HttpClientHandler();
+            var request = new HttpRequestMessage();
+            request.RequestUri = new Uri("https://localhost:44344/api/videojuegos" + "/" + detallejuego);
+            request.Method = HttpMethod.Get;
+            request.Headers.Add("Accept", "application/json");
 
+            var client = new HttpClient(httpHandler);
+
+            HttpResponseMessage response = await client.SendAsync(request);
+
+            string content = await response.Content.ReadAsStringAsync();
+            var resultado = JsonConvert.DeserializeObject<VideojuegosViewModel>(content);
+
+            
+            nombre.Text = resultado.Nombre;
+            dondejugar.Text = resultado.LugarDeJugar;
+            desc.Text = resultado.Descripcion;
+            desarrollador.Text = resultado.Desarrollador;
+            
+            fecha.Text = resultado.FechaLanzamiento.ToString();
+            if (resultado.Imagen == null)
+            {
+                imageN.Text = "null";
+            }
+            else
+            {
+                imageN.Text = resultado.Imagen.ToString();
+            }
+
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(VideojuegosPage));

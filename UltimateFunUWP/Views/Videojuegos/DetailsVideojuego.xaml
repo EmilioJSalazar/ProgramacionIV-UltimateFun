@@ -9,6 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF4ACA0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
 
             <RowDefinition Height="80"/>
@@ -53,7 +59,7 @@
 
                     </TextBlock>
 
-                    <TextBlock Margin="0, 7, 0, 6">
+                    <TextBlock Margin="0, 7, 0, 6" Height="40">
 
                             <Run Text="Descripción"/>
 
@@ -78,6 +84,12 @@
                     </TextBlock>
 
                 </StackPanel>
+                <TextBlock x:Name="nombre"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,22,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1321"/>
+                <TextBlock x:Name="dondejugar"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,55,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                <TextBlock x:Name="desc"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,93,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                <TextBlock x:Name="desarrollador"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,145,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                <TextBlock x:Name="fecha"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,187,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                <TextBlock x:Name="imageN"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,223,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
 
 
 

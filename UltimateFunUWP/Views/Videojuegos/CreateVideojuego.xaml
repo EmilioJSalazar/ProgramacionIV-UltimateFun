@@ -9,6 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFBCB54D"/>
+                <GradientStop Color="#FFFCFCF3" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
 
             <RowDefinition Height="80"/>
@@ -21,9 +27,9 @@
 
         <StackPanel Grid.Row="0">
 
-            <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center">Crear Cancion</TextBlock>
+            <TextBlock FontSize="25" FontWeight="Bold" HorizontalAlignment="Center">Crear Videojuego</TextBlock>
 
-            <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Update the following form and submit. It would update the current data source in Web API.</TextBlock>
+            <TextBlock FontStyle="Italic" HorizontalAlignment="Center">Inserte los datos del Videojuego que desea crear</TextBlock>
 
         </StackPanel>
 
@@ -100,7 +106,7 @@
 
             </Grid>
 
-            <Button Margin="20, 0, 0, -90" Click="Button_Click">Cancel</Button>
+            <Button Margin="20, 0, 0, -90" Click="Button_ClickCancel">Cancel</Button>
 
         </StackPanel>
     </Grid>

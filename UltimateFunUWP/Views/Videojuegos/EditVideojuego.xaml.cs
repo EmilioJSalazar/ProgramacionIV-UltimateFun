@@ -1,8 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
+using System.Threading.Tasks;
+using UltimateFunUWP.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +27,147 @@ namespace UltimateFunUWP.Views.Videojuegos
     /// </summary>
     public sealed partial class EditVideojuego : Page
     {
+
+        public static int EditarJuegoID;
+
         public EditVideojuego()
         {
             this.InitializeComponent();
+            cargarImforfacion();
         }
-    }
+
+        byte[] byteimage = null;
+
+
+        public async void cargarImforfacion()
+        {
+            var httpHandler = new HttpClientHandler();
+            var request = new HttpRequestMessage();
+            request.RequestUri = new Uri("https://localhost:44344/api/videojuegos" + "/" + EditarJuegoID);
+            request.Method = HttpMethod.Get;
+            request.Headers.Add("Accept", "application/json");
+
+            var client = new HttpClient(httpHandler);
+
+            HttpResponseMessage response = await client.SendAsync(request);
+
+            string content = await response.Content.ReadAsStringAsync();
+            var resultado = JsonConvert.DeserializeObject<VideojuegosViewModel>(content);
+            nombre.Text = resultado.Nombre;
+            dondejugar.Text = resultado.LugarDeJugar;
+            desc.Text = resultado.Descripcion;
+            desarrollador.Text = resultado.Desarrollador;
+            fecha.Text = resultado.FechaLanzamiento.ToString();
+            if (resultado.Imagen == null)
+            {
+                imageN.Text = "null";
+            }
+            else
+            {
+                imageN.Text = resultado.Imagen.ToString();
+            }
+
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(VideojuegosPage));
+
+        }
+
+        private async void SerializarAsync(Windows.Storage.StorageFile file)
+        {
+
+            byte[] imageByte = null;
+            using (var inputStream = await file.OpenSequentialReadAsync())
+            {
+                Task task = Task.Run(async () =>
+                {
+
+                    var readStream = inputStream.AsStreamForRead();
+                    var byteArray = new byte[readStream.Length];
+                    await readStream.ReadAsync(byteArray, 0, byteArray.Length);
+                    imageByte = byteArray;
+
+                });
+
+                task.Wait();
+
+            }
+            this.byteimage = imageByte;
+            //bitmap            
+        }
+
+        private async void Imagen_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new Windows.Storage.Pickers.FileOpenPicker();
+            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+            picker.FileTypeFilter.Add(".jpg");
+            picker.FileTypeFilter.Add(".jpeg");
+            picker.FileTypeFilter.Add(".png");
+
+            Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null)
+            {
+                // Application now has read/write access to the picked file
+                this.imageN.Text = "Picked photo: " + file.Name;
+            }
+            else
+            {
+                this.imageN.Text = "Operation cancelled.";
+            }
+            SerializarAsync(file);
+
+        }
+
+        private async void Actualizar_Click(object sender, RoutedEventArgs e)
+        {
+            if ((sender as Button).Content.ToString() == "Cancel")
+            {
+                Frame.Navigate(typeof(VideojuegosPage));
+                return;
+            }
+            var Editarjuego = new VideojuegosViewModel
+
+            {
+                VideojuegoID=EditarJuegoID,
+
+                Nombre = nombre.Text,
+
+               LugarDeJugar = dondejugar.Text,
+
+                Descripcion = desc.Text,
+
+                Desarrollador = desarrollador.Text,
+
+                FechaLanzamiento = DateTime.Parse(fecha.Text.ToString()),
+
+                Imagen = byteimage,
+            };
+
+            var httpHandler = new HttpClientHandler();
+            var client = new HttpClient(httpHandler);
+            var content = JsonConvert.SerializeObject(Editarjuego);
+
+
+            var data = new StringContent(content, Encoding.UTF8, "application/json");
+
+            var httpResponse = await client.PutAsync("https://localhost:44344/api/videojuegos" + "/" + EditarJuegoID, data);
+            if (httpResponse.Content != null)
+            {
+                var responseContent = await httpResponse.Content.ReadAsStringAsync();
+            }
+
+            Frame.Navigate(typeof(VideojuegosPage));
+
+        }
+
+
+
+
+
+    
+}
 }

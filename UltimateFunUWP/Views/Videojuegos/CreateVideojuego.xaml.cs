@@ -36,10 +36,10 @@ namespace UltimateFunUWP.Views.Videojuegos
         {
             if ((sender as Button).Content.ToString() == "Cancel")
             {
-                Frame.Navigate(typeof(CancionesPage));
+                Frame.Navigate(typeof(VideojuegosPage));
                 return;
             }
-            var cancion = new VideojuegosViewModel
+            var juego = new VideojuegosViewModel
             {
                 Nombre = Nombre.Text,
 
@@ -56,7 +56,7 @@ namespace UltimateFunUWP.Views.Videojuegos
             //Create a traves de Post
             var client = new HttpClient();
 
-            var content = JsonConvert.SerializeObject(cancion);
+            var content = JsonConvert.SerializeObject(juego);
 
 
             var data = new StringContent(content, Encoding.UTF8, "application/json");
@@ -66,7 +66,7 @@ namespace UltimateFunUWP.Views.Videojuegos
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();
             }
 
-            Frame.Navigate(typeof(CancionesPage));
+            Frame.Navigate(typeof(VideojuegosPage));
         }
 
         private async void SerializarAsync(Windows.Storage.StorageFile file)
@@ -111,6 +111,12 @@ namespace UltimateFunUWP.Views.Videojuegos
                 this.textBlock.Text = "Operation cancelled.";
             }
             SerializarAsync(file);
+
+        }
+
+        private void Button_ClickCancel(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(VideojuegosPage));
 
         }
     }
