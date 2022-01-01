@@ -53,7 +53,14 @@ namespace UltimateFunUWP.Views.Canciones
             duracion.Text = resultado.Duracion.ToString();
             genero.Text = resultado.Genero;
             fecha.Text = resultado.FechaLanzamiento.ToString();
-            imagen.Text = resultado.Imagen.ToString();
+            if (resultado.Imagen == null)
+            {
+                imagen.Text = "null";
+            }
+            else
+            {
+                imagen.Text = resultado.Imagen.ToString();
+            }
 
 
 
@@ -64,9 +71,9 @@ namespace UltimateFunUWP.Views.Canciones
         }
 
 
-  
 
-    private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+
+        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
         }

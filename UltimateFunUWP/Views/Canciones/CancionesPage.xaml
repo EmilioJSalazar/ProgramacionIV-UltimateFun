@@ -19,8 +19,8 @@
         <Grid FocusVisualPrimaryBrush="#FF3E5A82">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF255BA9" Offset="0"/>
-                    <GradientStop Color="#FFACB1EA" Offset="1"/>
+                    <GradientStop Color="#FF84B4F9" Offset="0"/>
+                    <GradientStop Color="#FFEDEEFA" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <!--
