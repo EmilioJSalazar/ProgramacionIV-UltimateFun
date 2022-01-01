@@ -21,6 +21,7 @@ namespace UltimateFunUWP.Views
         public PeliculasPage()
         {
             InitializeComponent();
+            volverCargarPeli();
         }
         PeliculasViewModel movie = new PeliculasViewModel();
 
@@ -43,6 +44,23 @@ namespace UltimateFunUWP.Views
 
 
         }
+        public async void volverCargarPeli()
+        {
+            var httpHandler = new HttpClientHandler();
+            var request = new HttpRequestMessage();
+            request.RequestUri = new Uri("https://localhost:44344/api/peliculas");
+            request.Method = HttpMethod.Get;
+            request.Headers.Add("Accept", "application/json");
+
+            var client = new HttpClient(httpHandler);
+
+            HttpResponseMessage response = await client.SendAsync(request);
+
+            string content = await response.Content.ReadAsStringAsync();
+            var resultado = JsonConvert.DeserializeObject<List<PeliculasViewModel>>(content);
+            Lista.ItemsSource = resultado;
+
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -59,7 +77,7 @@ namespace UltimateFunUWP.Views
             var pel = ((FrameworkElement)e.OriginalSource).DataContext as PeliculasViewModel;
             peliSeleccionada = pel.PeliculaID;
             DetailsPelicula.detallePeli = pel.PeliculaID;
-            EditPelicula.EditarPeli = pel.PeliculaID;
+            EditPelicula.EditarPeliID = pel.PeliculaID;
 
         }
 

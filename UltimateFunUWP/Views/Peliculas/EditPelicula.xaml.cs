@@ -28,7 +28,7 @@ namespace UltimateFunUWP.Views.Peliculas
     public sealed partial class EditPelicula : Page
     {
 
-        public static int EditarPeli;
+        public static int EditarPeliID;
 
 
         public EditPelicula()
@@ -43,7 +43,7 @@ namespace UltimateFunUWP.Views.Peliculas
         {
             var httpHandler = new HttpClientHandler();
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://localhost:44344/api/peliculas" + "/" + EditarPeli);
+            request.RequestUri = new Uri("https://localhost:44344/api/peliculas" + "/" + EditarPeliID);
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
 
@@ -131,8 +131,11 @@ namespace UltimateFunUWP.Views.Peliculas
                 Frame.Navigate(typeof(PeliculasPage));
                 return;
             }
-            var EditarCancion = new PeliculasViewModel
+            var EditarPeli = new PeliculasViewModel
+
             {
+                PeliculaID= EditarPeliID,
+
                 Tipo = int.Parse(tipo.Text.ToString()),
 
                 Nombre = nombre.Text,
@@ -154,12 +157,12 @@ namespace UltimateFunUWP.Views.Peliculas
 
             var httpHandler = new HttpClientHandler();
             var client = new HttpClient(httpHandler);
-            var content = JsonConvert.SerializeObject(EditarCancion);
+            var content = JsonConvert.SerializeObject(EditarPeli);
 
 
             var data = new StringContent(content, Encoding.UTF8, "application/json");
 
-            var httpResponse = await client.PutAsync("https://localhost:44344/api/peliculas" + "/" + EditarPeli, data);
+            var httpResponse = await client.PutAsync("https://localhost:44344/api/peliculas" + "/" + EditarPeliID, data);
             if (httpResponse.Content != null)
             {
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();
