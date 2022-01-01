@@ -9,6 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFA8E0F4"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <StackPanel Orientation="Vertical">
             <TextBlock Text="Register" FontSize="36" Margin="4" TextAlignment="Center"/>
             <TextBlock Text="Crear new account" FontSize="20" Margin="4" TextAlignment="Center"/>

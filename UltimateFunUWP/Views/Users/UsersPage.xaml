@@ -7,8 +7,13 @@
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5F6B5"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
             <!--
                 The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.
@@ -18,8 +23,8 @@
                 <TextBlock Text="Login" FontSize="36" Margin="4" TextAlignment="Center"/>
                 <TextBlock x:Name="ErrorMessage" Text="" FontSize="20" Margin="4" Foreground="Red" TextAlignment="Center"/>
 
-                
-                
+
+
                 <TextBlock Text="Enter your email below" Margin="0,0,0,20"
                TextWrapping="Wrap" Width="300"
                TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
@@ -29,7 +34,7 @@
                TextWrapping="Wrap" Width="300"
                TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
                 <PasswordBox x:Name="PasswordTextBox" Margin="4" Width="250"/>
-                
+
                 <Button x:Name="LoginButton" Content="Login" Background="DodgerBlue" Foreground="White"
         Click="LoginButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20"/>
                 <TextBlock Text="Don't have an account?"
