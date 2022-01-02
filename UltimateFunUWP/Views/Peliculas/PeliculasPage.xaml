@@ -8,7 +8,9 @@
     xmlns:Custom="using:Microsoft.UI.Xaml.Controls"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+
+        <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
         <Grid>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -29,8 +31,8 @@
             </Grid.ColumnDefinitions>
             <Button Grid.Row="0" Grid.Column="0" Content="Conectar API" Click="Button_Click"/>
             <Button Content="Crear Nuevo" Margin="0,176,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_1"/>
-            <ListView x:Name="Lista" Grid.Row="0" Padding="0" Grid.ColumnSpan="2" Margin="150,0,0,-643"
-                      ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" RightTapped="Lista_RightTapped">
+            <ListView x:Name="Lista" Grid.Row="0" Padding="0" Grid.ColumnSpan="2" Margin="150,0,0,-405"
+                      ScrollViewer.VerticalScrollBarVisibility="Visible" RightTapped="Lista_RightTapped">
                 <ListView.Resources>
                     <MenuFlyout x:Name="menu">
                         <MenuFlyout.Items>
@@ -55,7 +57,7 @@
                             <TextBlock Text="Actores" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                             <TextBlock Text="Director" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                             <TextBlock Text="Duracion" Width="100" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="FechaLanzamiento" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="FechaLanzamiento" Width="200" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                             <TextBlock Text="Imagen" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                         </StackPanel>
                     </DataTemplate>
@@ -80,7 +82,7 @@
                             <TextBlock Text="{x:Bind Actores}" Width="150"/>
                             <TextBlock Text="{x:Bind Director}" Width="150"/>
                             <TextBlock Text="{x:Bind Duracion}" Width="100"/>
-                            <TextBlock Text="{x:Bind FechaLanzamiento}" Width="150"/>
+                            <TextBlock Text="{x:Bind FechaLanzamiento}" Width="200"/>
                             <TextBlock Text="{x:Bind Imagen}" Width="150"/>
                         </StackPanel>
                     </DataTemplate>
@@ -88,4 +90,6 @@
             </ListView>
         </Grid>
     </Grid>
+    </ScrollViewer>
+
 </Page>

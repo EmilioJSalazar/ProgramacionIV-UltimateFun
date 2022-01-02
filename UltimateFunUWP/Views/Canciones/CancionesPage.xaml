@@ -9,8 +9,10 @@
     x:Class="UltimateFunUWP.Views.CancionesPage"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
-        <Grid.BorderBrush>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+
+        <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <Grid.BorderBrush>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
                 <GradientStop Color="#FF7BE8AC" Offset="1"/>
@@ -45,39 +47,42 @@
                 </Button.FocusVisualPrimaryBrush>
             </Button>
 
-            <ListView x:Name="Lista" Grid.Row="0" Grid.ColumnSpan="2" Margin="150,0,0,-502" Padding="0"
-              ScrollViewer.HorizontalScrollBarVisibility="Visible"  ScrollViewer.VerticalScrollBarVisibility="Visible" RightTapped="Lista_RightTapped ">
-                <ListView.Resources>
-                    <MenuFlyout x:Name="menu">
-                        <MenuFlyout.Items>
-                            <MenuFlyoutItem x:Name="Details" Text="Detalles" Click="Details_Click" Icon="View"/>
-                            <MenuFlyoutItem x:Name="Delete" Text="Eliminar" Click="Delete_Click" Icon="Delete"/>
-                            <MenuFlyoutItem x:Name="Edit" Text="Editar" Click="Edit_Click" Icon="Edit"/>
+                    <ListView x:Name="Lista" Grid.Row="0" Grid.ColumnSpan="2" Margin="150,0,0,-423" Padding="0"  RightTapped="Lista_RightTapped " SelectionChanged="Lista_SelectionChanged">
+
+                
 
 
-                        </MenuFlyout.Items>
-                    </MenuFlyout>
+                    <ListView.Resources>
+                        <MenuFlyout x:Name="menu">
+                            <MenuFlyout.Items>
+                                <MenuFlyoutItem x:Name="Details" Text="Detalles" Click="Details_Click" Icon="View"/>
+                                <MenuFlyoutItem x:Name="Delete" Text="Eliminar" Click="Delete_Click" Icon="Delete"/>
+                                <MenuFlyoutItem x:Name="Edit" Text="Editar" Click="Edit_Click" Icon="Edit"/>
 
-                </ListView.Resources>
 
-                <ListView.HeaderTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="ID" Width="50" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Nombre" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Lugar de escuchar" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Descripcion" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Artista" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Album" Width="150" Foreground="White" FontWeight="Bold"  FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Duracion" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Genero" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="FechaLanzamiento" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Imagen" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.HeaderTemplate>
+                            </MenuFlyout.Items>
+                        </MenuFlyout>
 
-                <!--<FlyoutBase.AttachedFlyout>
+                    </ListView.Resources>
+
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="ID" Width="50" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Nombre" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Lugar de escuchar" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Descripcion" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Artista" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Album" Width="150" Foreground="White" FontWeight="Bold"  FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Duracion" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Genero" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="FechaLanzamiento" Width="199" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Imagen" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+
+                    <!--<FlyoutBase.AttachedFlyout>
                     <Custom:CommandBarFlyout Placement="Right" x:Name="CommandBarFlyout1">
                         <AppBarButton Label="Edit" Icon="Edit" ToolTipService.ToolTip="Edit" Click="OnElementClicked" />
                         <AppBarButton Label="Details" Icon="View" ToolTipService.ToolTip="Details" Click="OnElementClicked" />
@@ -85,29 +90,33 @@
                     </Custom:CommandBarFlyout>
                 </FlyoutBase.AttachedFlyout>-->
 
-                <ListView.ItemTemplate>
+                    <ListView.ItemTemplate>
 
-                    <DataTemplate x:DataType="local:CancionesViewModel">
+                        <DataTemplate x:DataType="local:CancionesViewModel">
 
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock x:Name="idText" Text="{x:Bind Path=CancionID}" Width="45"/>
-                            <TextBlock Text="{x:Bind Path=Nombre}" Width="95"/>
-                            <TextBlock Text="{x:Bind Path=LugarDeEscuchar}" Width="145"/>
-                            <TextBlock Text="{x:Bind Path=Descripcion}" Width="145"/>
-                            <TextBlock Text="{x:Bind Path=Artista}" Width="145"/>
-                            <TextBlock Text="{x:Bind Path=Album}" Width="145"/>
-                            <TextBlock Text="{x:Bind Path=Duracion}" Width="95"/>
-                            <TextBlock Text="{x:Bind Path=Genero}" Width="95"/>
-                            <TextBlock Text="{x:Bind Path=FechaLanzamiento}" Width="145"/>
-                            <!--<Image x:Name="imagenCampo" Image="{x:Bind }" Width="80" Height="130"/>-->
-                            <Image x:Name="campoImagen" Source="{x:Bind Path=CurrentImage}" HorizontalAlignment="Left" Width="145" Height="150"/>
-                            <!--holiiiii-->
-                            <!--<Image Source="/Assets/LockScreenLogo.scale-200.png" Width="150" Height="150"/>-->
-                            <!--<TextBlock Text="{x:Bind Imagen, Mode=TwoWay}" Width="150"/>-->
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock x:Name="idText" Text="{x:Bind Path=CancionID}" Width="45"/>
+                                <TextBlock Text="{x:Bind Path=Nombre}" Width="95"/>
+                                <TextBlock Text="{x:Bind Path=LugarDeEscuchar}" Width="145"/>
+                                <TextBlock Text="{x:Bind Path=Descripcion}" Width="145"/>
+                                <TextBlock Text="{x:Bind Path=Artista}" Width="145"/>
+                                <TextBlock Text="{x:Bind Path=Album}" Width="145"/>
+                                <TextBlock Text="{x:Bind Path=Duracion}" Width="95"/>
+                                <TextBlock Text="{x:Bind Path=Genero}" Width="95"/>
+                                <TextBlock Text="{x:Bind Path=FechaLanzamiento}" Width="145"/>
+                                <!--<Image x:Name="imagenCampo" Image="{x:Bind }" Width="80" Height="130"/>-->
+                                <Image x:Name="campoImagen" Source="{x:Bind Path=CurrentImage}" HorizontalAlignment="Left" Width="145" Height="150"/>
+                                <!--holiiiii-->
+                                <!--<Image Source="/Assets/LockScreenLogo.scale-200.png" Width="150" Height="150"/>-->
+                                <!--<TextBlock Text="{x:Bind Imagen, Mode=TwoWay}" Width="150"/>-->
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    
             </ListView>
+
         </Grid>
     </Grid>
+    </ScrollViewer>
+
 </Page>

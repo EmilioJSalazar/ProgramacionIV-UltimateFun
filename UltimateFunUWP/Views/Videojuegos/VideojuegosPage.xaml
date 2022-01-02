@@ -8,7 +8,9 @@
     xmlns:Custom="using:Microsoft.UI.Xaml.Controls"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+
+        <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
         <Grid>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -29,7 +31,7 @@
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Content="Conectar API" Click="Button_Click" Width="110"/>
             <Button Content="Crear Nuevo" Margin="0,176,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click_1"/>
-            <ListView x:Name="Lista" Grid.Row="0" Padding="0" Grid.ColumnSpan="2" Margin="150,0,0,-91" RightTapped="Lista_RightTapped">
+            <ListView x:Name="Lista" Grid.Row="0" Padding="0" Grid.ColumnSpan="2" Margin="150,0,74,-250" RightTapped="Lista_RightTapped" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 <ListView.Resources>
                     <MenuFlyout x:Name="menu">
                         <MenuFlyout.Items>
@@ -45,12 +47,12 @@
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="ID" Width="50" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                            <TextBlock Text="Nombre" Width="100" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                            <TextBlock Text="Lugar de jugar" Width="150" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                            <TextBlock Text="Descripcion" Width="150" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                            <TextBlock Text="Desarrollador" Width="150" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                            <TextBlock Text="FechaLanzamiento" Width="150" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="ID" Width="100" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="Nombre" Width="150" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="Lugar de jugar" Width="200" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="Descripcion" Width="200" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="Desarrollador" Width="200" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="FechaLanzamiento" Width="200" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
                             <TextBlock Text="Imagen" Width="150" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
                         </StackPanel>
                     </DataTemplate>
@@ -67,12 +69,12 @@
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:VideojuegosViewModel">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{x:Bind VideojuegoID}" Width="50"/>
-                            <TextBlock Text="{x:Bind Nombre}" Width="100"/>
-                            <TextBlock Text="{x:Bind LugarDeJugar}" Width="150"/>
-                            <TextBlock Text="{x:Bind Descripcion}" Width="150"/>
-                            <TextBlock Text="{x:Bind Desarrollador}" Width="150"/>
-                            <TextBlock Text="{x:Bind FechaLanzamiento}" Width="150"/>
+                            <TextBlock Text="{x:Bind VideojuegoID}" Width="100"/>
+                            <TextBlock Text="{x:Bind Nombre}" Width="150"/>
+                            <TextBlock Text="{x:Bind LugarDeJugar}" Width="200"/>
+                            <TextBlock Text="{x:Bind Descripcion}" Width="200"/>
+                            <TextBlock Text="{x:Bind Desarrollador}" Width="200"/>
+                            <TextBlock Text="{x:Bind FechaLanzamiento}" Width="200"/>
                             <TextBlock Text="{x:Bind Imagen}" Width="150"/>
                         </StackPanel>
                     </DataTemplate>
@@ -80,4 +82,6 @@
             </ListView>
         </Grid>
     </Grid>
+    </ScrollViewer>
+
 </Page>
