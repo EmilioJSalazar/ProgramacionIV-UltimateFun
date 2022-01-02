@@ -48,55 +48,55 @@
 
                     <StackPanel Grid.Column="0" Margin="0,0,0,-20" d:LayoutOverrides="TopPosition, BottomPosition">
 
-                        <TextBlock Margin="0, 10, 0, 8">
+                        <TextBlock Margin="-10, 10, 0, 8">
 
                             <Run Text="Nombre"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 6, 0, 8">
+                        <TextBlock Margin="-10, 6, 0, 8">
 
-                            <Run Text="DóndeEscuchar"/>
+                            <Run Text="Dónde Escuchar"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 7, 0, 6">
+                        <TextBlock Margin="-10, 7, 0, 6">
 
                             <Run Text="Descripción"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 10, 0, 0">
+                        <TextBlock Margin="-10, 10, 0, 0">
 
                             <Run Text="Artista"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 10, 0, 0">
+                        <TextBlock Margin="-10, 10, 0, 0">
 
                             <Run Text="Album"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="-10, 20, 0, 0">
 
                             <Run Text="Duración"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="-10, 20, 0, 0">
 
                             <Run Text="Género"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="-10, 20, 0, 0">
 
-                            <Run Text="FechaDeLanzamiento"/>
+                            <Run Text="Fecha De Lanzamiento"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="-10, 20, 0, 0">
 
                             <Run Text="Imagen"/>
 
@@ -111,7 +111,7 @@
                     <TextBlock x:Name="duracion"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,184,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="genero"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,224,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="fecha"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,263,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
-                    <Image x:Name="imagen"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,298,0,0"  VerticalAlignment="Top" Width="80" Height="130"/>
+                    <Image x:Name="imagen"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,298,0,0"  VerticalAlignment="Top" Width="80" Height="80"/>
 
 
 
