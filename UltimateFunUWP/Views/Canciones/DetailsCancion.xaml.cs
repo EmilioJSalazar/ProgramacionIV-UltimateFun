@@ -8,12 +8,14 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UltimateFunUWP.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -26,10 +28,32 @@ namespace UltimateFunUWP.Views.Canciones
     public sealed partial class DetailsCancion : Page
     {
         public static int detalleSong;
+<<<<<<< HEAD
+=======
+        public static CancionesPage canc;
+
+>>>>>>> 718c39d0a3998dc96b4988e7cbcceeabe4edf411
         public DetailsCancion()
         {
             this.InitializeComponent();
             cargarInforfacion();
+        }
+        public async void Deserializar(byte[] imageByte)
+        {
+            
+            using(InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
+            {
+                using(DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
+                {
+                    writer.WriteBytes(imageByte);
+                    await writer.StoreAsync();
+                }
+                var result = new BitmapImage();
+                await result.SetSourceAsync(stream);
+
+                this.imagen.Source = result;
+            }
+
         }
         public async void cargarInforfacion()
         {
@@ -53,6 +77,7 @@ namespace UltimateFunUWP.Views.Canciones
             duracion.Text = resultado.Duracion.ToString();
             genero.Text = resultado.Genero;
             fecha.Text = resultado.FechaLanzamiento.ToString();
+<<<<<<< HEAD
             if (resultado.Imagen == null)
             {
                 imagen.Text = "null";
@@ -61,6 +86,10 @@ namespace UltimateFunUWP.Views.Canciones
             {
                 imagen.Text = resultado.Imagen.ToString();
             }
+=======
+            Deserializar(resultado.Imagen);
+           
+>>>>>>> 718c39d0a3998dc96b4988e7cbcceeabe4edf411
 
 
 

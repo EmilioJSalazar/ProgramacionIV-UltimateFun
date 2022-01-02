@@ -48,55 +48,59 @@
 
                     <StackPanel Grid.Column="0" Margin="0,0,0,-20" d:LayoutOverrides="TopPosition, BottomPosition">
 
-                        <TextBlock Margin="0, 10, 0, 8">
+                        <TextBlock Margin="-10, 10, 0, 8">
 
                             <Run Text="Nombre"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 6, 0, 8">
+                        <TextBlock Margin="-10, 6, 0, 8">
 
-                            <Run Text="DóndeEscuchar"/>
+                            <Run Text="Dónde Escuchar"/>
 
                         </TextBlock>
 
+<<<<<<< HEAD
                         <TextBlock Margin="0, 7, 0, 6" Height="48">
+=======
+                        <TextBlock Margin="-10, 7, 0, 6">
+>>>>>>> 718c39d0a3998dc96b4988e7cbcceeabe4edf411
 
                             <Run Text="Descripción"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 10, 0, 0">
+                        <TextBlock Margin="-10, 10, 0, 0">
 
                             <Run Text="Artista"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 10, 0, 0">
+                        <TextBlock Margin="-10, 10, 0, 0">
 
                             <Run Text="Album"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="-10, 20, 0, 0">
 
                             <Run Text="Duración"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="-10, 20, 0, 0">
 
                             <Run Text="Género"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="-10, 20, 0, 0">
 
-                            <Run Text="FechaDeLanzamiento"/>
+                            <Run Text="Fecha De Lanzamiento"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="-10, 20, 0, 0">
 
                             <Run Text="Imagen"/>
 
@@ -106,12 +110,21 @@
                     <TextBlock x:Name="nombre"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="dondeEscuchar"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,40,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="desc"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,73,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1196"/>
+<<<<<<< HEAD
                     <TextBlock x:Name="artista"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,152,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="album"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,169,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="duracion"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,215,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="genero"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,254,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="fecha"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,298,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="imagen"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,337,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+=======
+                    <TextBlock x:Name="artista"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,119,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                    <TextBlock x:Name="album"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,152,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                    <TextBlock x:Name="duracion"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,184,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                    <TextBlock x:Name="genero"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,224,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                    <TextBlock x:Name="fecha"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,263,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
+                    <Image x:Name="imagen"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,298,0,0"  VerticalAlignment="Top" Width="80" Height="80"/>
+>>>>>>> 718c39d0a3998dc96b4988e7cbcceeabe4edf411
 
 
 
