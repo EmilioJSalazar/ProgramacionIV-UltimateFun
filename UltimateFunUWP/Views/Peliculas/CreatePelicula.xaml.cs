@@ -110,13 +110,14 @@ namespace UltimateFunUWP.Views.Peliculas
             if (file != null)
             {
                 // Application now has read/write access to the picked file
-                this.textBlock.Text = "Picked photo: " + file.Name;
+                this.textBlockImagen.Text = "Imagen seleccionada: " + file.Name;
+                SerializarAsync(file);
             }
             else
             {
-                this.textBlock.Text = "Operation cancelled.";
+                this.textBlockImagen.Text = "Operación cancelada";
             }
-            SerializarAsync(file);
+
 
         }
 

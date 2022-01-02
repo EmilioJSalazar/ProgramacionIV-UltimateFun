@@ -47,7 +47,7 @@
 
                 <StackPanel Grid.Column="0" Margin="0,10,0,-103">
 
-                    <TextBlock Margin="0, 10, 0, 8" Height="44">
+                    <TextBlock Margin="0, 30, 0, 8" Height="22">
 
                             <Run Text="Tipo"/>
 
@@ -61,13 +61,13 @@
 
                     <TextBlock Margin="0, 7, 0, 6">
 
-                            <Run Text="DondeVisualizar"/>
+                            <Run Text="Donde Visualizar"/>
 
                     </TextBlock>
 
                     <TextBlock Margin="0, 10, 0, 0">
 
-                            <Run Text="Descripcion"/>
+                            <Run Text="Descripción"/>
 
                     </TextBlock>
 
@@ -90,11 +90,11 @@
                     </TextBlock>
                     <TextBlock Margin="0, 20, 0, 0">
 
-                            <Run Text="FechaDeLanzamiento"/>
+                            <Run Text="Fecha de Lanzamiento"/>
 
                     </TextBlock>
 
-                    <TextBlock Margin="0, 20, 0, 0">
+                    <TextBlock Margin="0, 25, 0, 0">
 
                             <Run Text="Imagen"/>
 
@@ -123,15 +123,16 @@
 
 
                     <TextBox x:Name="fecha" Margin="0, 2, 0, 2"/>
-                    <Button x:Name="Imagen" Height="36" Width="97" Click="Imagen_Click" Content="Choose file"/>
-                    <TextBlock x:Name="textBlock" Width="493" Height="36" HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="fechaParametros" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" Text="mm/dd/aaaa" VerticalAlignment="Top" Width="1195"/>
+                    <TextBlock x:Name="textBlockImagen" Grid.Column="1" HorizontalAlignment="Left" Margin="160,0,0,0" Text="" VerticalAlignment="Top" Width="1195"/>
+                    <Button x:Name="Imagen" Margin="0, -15, 0, 2" Height="31" Width="150" Click="Imagen_Click" Content="Seleccionar archivo"/>
 
                 </StackPanel>
 
-                <Button x:Name="actionButton" Grid.Column="1" Margin="0,0,0,-47" Click="Button_Click" VerticalAlignment="Bottom" Content="Create"/>
+                <Button x:Name="actionButton" Grid.Column="1" Margin="0,0,0,-30" Click="Button_Click" VerticalAlignment="Bottom" Content="Crear"/>
 
             </Grid>
-            <Button Click="Button_ClickCancel" Content="Cancel" Height="53"/>
+            <Button Click="Button_ClickCancel" Content="Cancelar" Height="30" Margin="20,0,0,0"/>
 
         </StackPanel>
     </Grid>
