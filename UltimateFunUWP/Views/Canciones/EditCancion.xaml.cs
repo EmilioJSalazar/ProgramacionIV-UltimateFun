@@ -10,12 +10,14 @@ using System.Threading.Tasks;
 using UltimateFunUWP.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -37,7 +39,27 @@ namespace UltimateFunUWP.Views.Canciones
             cargarInforfacion();
         }
         byte[] byteimage = null;
+        public async void Deserializar(byte[] imageByte)
+        {
 
+            using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
+            {
+                using (DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
+                {
+                    writer.WriteBytes(imageByte);
+                    await writer.StoreAsync();
+                }
+                var result = new BitmapImage();
+                if (imageByte != null)
+                {
+                    await result.SetSourceAsync(stream);
+                }
+                
+
+                this.imagenCampo.Source = result;
+            }
+
+        }
 
         public async void cargarInforfacion()
         {
@@ -61,7 +83,7 @@ namespace UltimateFunUWP.Views.Canciones
             Duracion.Text = resultado.Duracion.ToString();
             Genero.Text = resultado.Genero;
             FechaDeLanzamiento.Text = resultado.FechaLanzamiento.ToString();
-            imagen.Text = resultado.Imagen.ToString();
+            Deserializar(resultado.Imagen);
 
 
         }
@@ -94,10 +116,19 @@ namespace UltimateFunUWP.Views.Canciones
             this.byteimage = imageByte;
             //bitmap            
         }
-
+        
         private async void Imagen_Click(object sender, RoutedEventArgs e)
         {
+            var httpHandler = new HttpClientHandler();
+            var client = new HttpClient(httpHandler);
+            var request = new HttpRequestMessage();
+            request.RequestUri = new Uri("https://localhost:44344/api/canciones" + "/" + EditarCancion);
+            request.Method = HttpMethod.Get;
+            request.Headers.Add("Accept", "application/json");
+            HttpResponseMessage response = await client.SendAsync(request);
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
+            string content = await response.Content.ReadAsStringAsync();
+            var resultado = JsonConvert.DeserializeObject<CancionesViewModel>(content);
             picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
             picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
             picker.FileTypeFilter.Add(".jpg");
@@ -108,13 +139,17 @@ namespace UltimateFunUWP.Views.Canciones
             if (file != null)
             {
                 // Application now has read/write access to the picked file
-                this.imagen.Text = "Picked photo: " + file.Name;
+                this.imagenTexto.Text = "Imagen seleccionada: " + file.Name;
+                byte[] i = null;
+                Deserializar(i);
+                SerializarAsync(file);
             }
-            else
+            /*else
             {
-                this.imagen.Text = "Operation cancelled.";
-            }
-            SerializarAsync(file);
+                //Deserializar(resultado.Imagen);
+                //this.imagen.Text = "Operation cancelled.";
+            }*/
+            
 
         }
 
