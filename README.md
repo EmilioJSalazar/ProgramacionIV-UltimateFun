@@ -8,6 +8,9 @@ Clonar el proyecto
   1. Copiar el link de github que corresponde al proyecto (https://github.com/EmilioJSalazar/ProgramacionIV-UltimateFun)
   2. Abrir Visual Studio
   3. Seleccionar "Clonar repositorio"
+
+
+
   ![image](https://user-images.githubusercontent.com/62667937/147863026-6921142e-c050-4830-9c50-51ba600dd50a.png)
 
 
