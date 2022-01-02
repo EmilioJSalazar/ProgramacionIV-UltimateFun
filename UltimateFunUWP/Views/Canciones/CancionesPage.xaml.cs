@@ -62,6 +62,7 @@ namespace UltimateFunUWP.Views
             }
 
             Lista.ItemsSource = list;
+            
         }
         public async void volverCargarCancion()
         {
