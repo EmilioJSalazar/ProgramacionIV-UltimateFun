@@ -35,9 +35,9 @@
                 <ListView.Resources>
                     <MenuFlyout x:Name="menu">
                         <MenuFlyout.Items>
-                            <MenuFlyoutItem x:Name="Details" Text="Details" Click="Details_Click" Icon="View"/>
-                            <MenuFlyoutItem x:Name="Delete" Text="Delete" Click="Delete_Click" Icon="Delete"/>
-                            <MenuFlyoutItem x:Name="Edit" Text="Edit" Click="Edit_Click" Icon="Edit"/>
+                            <MenuFlyoutItem x:Name="Details" Text="Detalles" Click="Details_Click" Icon="View"/>
+                            <MenuFlyoutItem x:Name="Delete" Text="Eliminar" Click="Delete_Click" Icon="Delete"/>
+                            <MenuFlyoutItem x:Name="Edit" Text="Editar" Click="Edit_Click" Icon="Edit"/>
 
 
                         </MenuFlyout.Items>

@@ -8,12 +8,14 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UltimateFunUWP.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -31,6 +33,30 @@ namespace UltimateFunUWP.Views.Videojuegos
         {
             this.InitializeComponent();
             cargarInforfacion();
+        }
+
+        public async void Deserializar(byte[] imageByte)
+        {
+
+            if (imageByte == null)
+            {
+                this.imagenTitulo.Text = "";
+            }
+            else
+            {
+                using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
+                {
+                    using (DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
+                    {
+                        writer.WriteBytes(imageByte);
+                        await writer.StoreAsync();
+                    }
+                    var result = new BitmapImage();
+                    await result.SetSourceAsync(stream);
+
+                    this.imagen.Source = result;
+                }
+            }
         }
         public async void cargarInforfacion()
         {
@@ -54,14 +80,7 @@ namespace UltimateFunUWP.Views.Videojuegos
             desarrollador.Text = resultado.Desarrollador;
             
             fecha.Text = resultado.FechaLanzamiento.ToString();
-            if (resultado.Imagen == null)
-            {
-                imageN.Text = "null";
-            }
-            else
-            {
-                imageN.Text = resultado.Imagen.ToString();
-            }
+            Deserializar(resultado.Imagen);
 
         }
         private void Button_Click(object sender, RoutedEventArgs e)

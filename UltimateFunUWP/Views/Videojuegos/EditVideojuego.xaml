@@ -58,7 +58,7 @@
 
                         <TextBlock Margin="0, 6, 0, 8">
 
-                            <Run Text="DondeJugar"/>
+                            <Run Text="Donde Jugar"/>
 
                         </TextBlock>
 
@@ -66,7 +66,7 @@
 
                         <TextBlock Margin="0, 10, 0, 0" Text="Descripción"/>
 
-                        <TextBlock Margin="0, 10, 0, 0">
+                        <TextBlock Margin="0, 15, 0, 0">
 
                             <Run Text="Desarrollador"/>
 
@@ -76,13 +76,13 @@
 
 
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="0, 15, 0, 0">
 
-                            <Run Text="FechaDeLanzamiento"/>
+                            <Run Text="Fecha de Lanzamiento"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="0, 40, 0, 0">
 
                             <Run Text="Imagen"/>
 
@@ -103,13 +103,19 @@
 
                         <TextBox x:Name="fecha" Margin="0, 2, 0, 2" Height="35"/>
 
-                        <Button x:Name="Imagen" Margin="0, 2, 0, 2" Height="31" Width="97" Click="Imagen_Click" Content="Choose file"/>
-                        <TextBlock x:Name="imageN" Margin="0, 0, 1000, 0" Width="443"/>
+                        <TextBlock x:Name="fechaParametros" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" Text="mm/dd/aaaa" VerticalAlignment="Top" Width="1195"/>
+
+
+                        <Image x:Name="imagenCampo" Grid.Column="1" HorizontalAlignment="Left" Margin="6,8,0,2"  VerticalAlignment="Top" Width="80" Height="80"/>
+                        <TextBlock x:Name="imagenTexto" Margin="0, -80, 0, 2" Grid.Column="1"/>
+                        <TextBlock x:Name="imagenDefecto" Grid.Column="1" HorizontalAlignment="Left" Margin="0,-80,0,0" Text="N/A" VerticalAlignment="Top" Width="1195"/>
+
+                        <Button x:Name="Imagen" Margin="0, 14, 0, 2" Height="31" Width="150" Click="Imagen_Click" Content="Seleccionar archivo"/>
 
                     </StackPanel>
 
-                    <Button x:Name="actionButton" Margin="0,0,0,41" Click="Actualizar_Click" VerticalAlignment="Bottom" Content="Actualizar" Grid.Column="1"/>
-                    <Button Margin="20,515,0,0" Click="Button_Click" VerticalAlignment="Top">Cancel</Button>
+                    <Button x:Name="actionButton" Margin="11,0,0,25" Click="Actualizar_Click" VerticalAlignment="Bottom" Content="Actualizar" Grid.Column="1" Width="80"/>
+                    <Button Click="Button_Click" Margin="11,316,0,0" VerticalAlignment="Top">Cancelar</Button>
 
                 </Grid>
 
