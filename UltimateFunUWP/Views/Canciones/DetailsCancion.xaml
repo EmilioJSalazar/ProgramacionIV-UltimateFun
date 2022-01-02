@@ -112,9 +112,7 @@
                     <TextBlock x:Name="duracion"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,215,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="genero"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,254,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
                     <TextBlock x:Name="fecha"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,298,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
-                    <TextBlock x:Name="imagen"     Grid.Column="1" HorizontalAlignment="Left" Margin="5,337,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="1195"/>
-
-                   
+                    <Image x:Name="imagen"     Grid.Column="1" HorizontalAlignment="Left" Margin="0,298,0,0"  VerticalAlignment="Top" Width="80" Height="80"/>
 
 
 

@@ -28,11 +28,10 @@ namespace UltimateFunUWP.Views.Canciones
     public sealed partial class DetailsCancion : Page
     {
         public static int detalleSong;
-<<<<<<< HEAD
-=======
+
         public static CancionesPage canc;
 
->>>>>>> 718c39d0a3998dc96b4988e7cbcceeabe4edf411
+
         public DetailsCancion()
         {
             this.InitializeComponent();
@@ -59,7 +58,7 @@ namespace UltimateFunUWP.Views.Canciones
         {
             var httpHandler = new HttpClientHandler();
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://localhost:44344/api/canciones"+"/"+detalleSong);
+            request.RequestUri = new Uri("https://localhost:44344/api/canciones" + "/" + detalleSong);
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
 
@@ -77,30 +76,10 @@ namespace UltimateFunUWP.Views.Canciones
             duracion.Text = resultado.Duracion.ToString();
             genero.Text = resultado.Genero;
             fecha.Text = resultado.FechaLanzamiento.ToString();
-<<<<<<< HEAD
-            if (resultado.Imagen == null)
-            {
-                imagen.Text = "null";
-            }
-            else
-            {
-                imagen.Text = resultado.Imagen.ToString();
-            }
-=======
             Deserializar(resultado.Imagen);
-           
->>>>>>> 718c39d0a3998dc96b4988e7cbcceeabe4edf411
-
-
-
-
-
-
-
         }
 
-
-
+        
 
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
