@@ -3,6 +3,15 @@ PASO A PASO PARA ACCEDER CORRECTAMENTE A LA APLICACION "UltimateFun"
 
 Integrantes: Emilio Salazar, Domenica Rueda & Patricia Zurita
 
+Clonar el proyecto 
+
+  1. Copiar el link de github que corresponde al proyecto (https://github.com/EmilioJSalazar/ProgramacionIV-UltimateFun)
+  2. Abrir Visual Studio
+  3. Seleccionar "Clonar repositorio"
+  ![image](https://user-images.githubusercontent.com/62667937/147863026-6921142e-c050-4830-9c50-51ba600dd50a.png)
+
+
+Para abrir el proyecto deberá copiar el link de github para poder clonar el mismo
 
 
 Una vez abierto la API y La aplicacion universal de windows deberá relizar lo siguiente:
