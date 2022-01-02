@@ -35,8 +35,8 @@
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Row="0" Grid.Column="0" Content="Conectar API" Click="Button_Click" FocusVisualPrimaryBrush="White" Background="White" Foreground="#FF2ECBC3"/>
-            <Button Content="Crear Nuevo" Margin="0,176,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_1" Background="White" Foreground="#FF2ECBC3">
+            <Button Margin="5,0,0,0" Grid.Row="0" Grid.Column="0" Content="Conectar API" Click="Button_Click" FocusVisualPrimaryBrush="White" Background="White" Foreground="#FF2ECBC3"/>
+            <Button Content="Crear Nuevo" Margin="5,176,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click_1" Background="White" Foreground="#FF2ECBC3">
                 <Button.FocusVisualPrimaryBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
@@ -51,7 +51,7 @@
                     <MenuFlyout x:Name="menu">
                         <MenuFlyout.Items>
                             <MenuFlyoutItem x:Name="Details" Text="Details" Click="Details_Click" Icon="View"/>
-                            <MenuFlyoutItem x:Name="Delete" Text="Delate" Click="Delete_Click" Icon="Delete"/>
+                            <MenuFlyoutItem x:Name="Delete" Text="Delete" Click="Delete_Click" Icon="Delete"/>
                             <MenuFlyoutItem x:Name="Edit" Text="Edit" Click="Edit_Click" Icon="Edit"/>
 
 
@@ -90,16 +90,17 @@
                     <DataTemplate x:DataType="local:CancionesViewModel">
 
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:Name="idText" Text="{x:Bind Path=CancionID}" Width="50"/>
-                            <TextBlock Text="{x:Bind Path=Nombre}" Width="100"/>
-                            <TextBlock Text="{x:Bind Path=LugarDeEscuchar}" Width="150"/>
-                            <TextBlock Text="{x:Bind Path=Descripcion}" Width="150"/>
-                            <TextBlock Text="{x:Bind Path=Artista}" Width="150"/>
-                            <TextBlock Text="{x:Bind Path=Album}" Width="150"/>
-                            <TextBlock Text="{x:Bind Path=Duracion}" Width="100"/>
-                            <TextBlock Text="{x:Bind Path=Genero}" Width="100"/>
-                            <TextBlock Text="{x:Bind Path=FechaLanzamiento}" Width="150"/>
-                            <Image Source="{x:Bind Path=CurrentImage}" Width="150" Height="150"/>
+                            <TextBlock x:Name="idText" Text="{x:Bind Path=CancionID}" Width="45"/>
+                            <TextBlock Text="{x:Bind Path=Nombre}" Width="95"/>
+                            <TextBlock Text="{x:Bind Path=LugarDeEscuchar}" Width="145"/>
+                            <TextBlock Text="{x:Bind Path=Descripcion}" Width="145"/>
+                            <TextBlock Text="{x:Bind Path=Artista}" Width="145"/>
+                            <TextBlock Text="{x:Bind Path=Album}" Width="145"/>
+                            <TextBlock Text="{x:Bind Path=Duracion}" Width="95"/>
+                            <TextBlock Text="{x:Bind Path=Genero}" Width="95"/>
+                            <TextBlock Text="{x:Bind Path=FechaLanzamiento}" Width="145"/>
+                            <!--<Image x:Name="imagenCampo" Image="{x:Bind }" Width="80" Height="130"/>-->
+                            <Image x:Name="campoImagen" Source="{x:Bind Path=CurrentImage}" HorizontalAlignment="Left" Width="145" Height="150"/>
                             <!--holiiiii-->
                             <!--<Image Source="/Assets/LockScreenLogo.scale-200.png" Width="150" Height="150"/>-->
                             <!--<TextBlock Text="{x:Bind Imagen, Mode=TwoWay}" Width="150"/>-->

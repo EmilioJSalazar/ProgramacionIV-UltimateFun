@@ -50,10 +50,13 @@ namespace UltimateFunUWP.Views
             for (int i = 0; i < list.Count; i++)
             {
                 if (list.Equals(cancion.Imagen))
-                {
+                /*{
                     byte[] item = (byte[])list[i];
                     cancion.Deserializar(item);
                     
+                }*/
+                {
+                    BitmapImage item = Deserializar(cancion.Imagen);
                 }
             }
 
@@ -167,36 +170,24 @@ namespace UltimateFunUWP.Views
 
         }
 
-        /*public static ImageSource ByteToImage(byte[] imageData)
+        public BitmapImage Deserializar(byte[] imageByte)
         {
-            BitmapImage biImg = new BitmapImage();
-            MemoryStream ms = new MemoryStream(imageData);
-            biImg.BeginInit();
-            biImg.StreamSource = ms;
-            biImg.EndInit();
 
-            ImageSource imgSrc = biImg as ImageSource;
-
-            return imgSrc;
-        }*/
-
-        /*public ImageSource Imagen { get { return imagen; } set { Set(ref imagen, value); } }
-        private ImageSource imagen;
-        readonly byte[] imageByte = null;
-        public async void Deserializar()
-        {
             using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
             {
                 using (DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
                 {
                     writer.WriteBytes(imageByte);
-                    await writer.StoreAsync();
+                    //await writer.StoreAsync();
                 }
-                var image = new BitmapImage();
-                await image.SetSourceAsync(stream);
-
-                this.Imagen = image;
+                var result = new BitmapImage();
+                //await result.SetSourceAsync(stream);
+                
+                return result;
+                
+                //this.imagen.Source = result;
             }
-        }*/
+
+        }
     }
 }
