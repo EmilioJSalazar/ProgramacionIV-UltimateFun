@@ -13,13 +13,15 @@ Clonar el proyecto
 
   ![image](https://user-images.githubusercontent.com/62667937/147863026-6921142e-c050-4830-9c50-51ba600dd50a.png)
   
-  4. Pegar el link y poner clonar 
+  4. Pegar el link
 
 
   
   ![image](https://user-images.githubusercontent.com/62667937/147863050-5d1cbb4d-9021-472d-a093-e9fbd38472ed.png)
+  
+  5. Seleccionar "Clonar"
 
-![image](https://user-images.githubusercontent.com/62667937/147863054-91a71418-c23c-4198-9b80-803400f6ee95.png)
+  ![image](https://user-images.githubusercontent.com/62667937/147863054-91a71418-c23c-4198-9b80-803400f6ee95.png)
 
 
 Para abrir el proyecto deberá copiar el link de github para poder clonar el mismo
