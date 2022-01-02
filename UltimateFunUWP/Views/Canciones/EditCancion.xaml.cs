@@ -122,7 +122,7 @@ namespace UltimateFunUWP.Views.Canciones
             var httpHandler = new HttpClientHandler();
             var client = new HttpClient(httpHandler);
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://localhost:44344/api/canciones" + "/" + EditarCancion);
+            request.RequestUri = new Uri("https://localhost:44344/api/canciones" + "/" + EditarCancionID);
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
             HttpResponseMessage response = await client.SendAsync(request);

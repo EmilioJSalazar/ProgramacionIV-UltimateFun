@@ -37,7 +37,7 @@
                     <TextBlock HorizontalAlignment="Left" Margin="10,116,0,0" Text="Es una aplicación dónde podrás encontrar los títulos de las últimas tendencias en el mundo del entretenimiento o sus próximos lanzamientos y así puedas decidir  fácilmente la opción más divertida y entretenida de pasar tu día, tarde o noche!  Así que…….. ¿Qué deseas hacer hoy?" TextWrapping="Wrap" FontSize="30" VerticalAlignment="Top" Width="1052" Height="233" SelectionChanged="TextBlock_SelectionChanged"/>
 
 
-                    <Image Source="/Assets/homero-PhotoRoom.png" Margin="-26,365,1013,271"/>
+                    <Image Source="/Assets/homero.png" Margin="-26,365,1013,271"/>
                 </Grid>
             </RelativePanel>
             <Button Content="PELICULAS Y SERIES"  FontSize="25" Foreground="HotPink" Margin="471,331,0,0" Click="Button_Click" Height="46" Width="239" VerticalAlignment="Top"/>
