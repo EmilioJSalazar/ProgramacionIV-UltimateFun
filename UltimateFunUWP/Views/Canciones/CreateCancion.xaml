@@ -21,9 +21,9 @@
 
                 <RowDefinition Height="80"/>
 
-                <RowDefinition Height="360"/>
+                <RowDefinition Height="382"/>
 
-                <RowDefinition Height="*"/>
+                <RowDefinition/>
 
             </Grid.RowDefinitions>
 
@@ -55,13 +55,13 @@
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 6, 0, 8">
+                        <TextBlock Margin="0, 10, 0, 8">
 
-                            <Run Text="DóndeEscuchar"/>
+                            <Run Text="Dónde Escuchar"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 7, 0, 6">
+                        <TextBlock Margin="0, 10, 0, 6">
 
                             <Run Text="Descripción"/>
 
@@ -73,7 +73,7 @@
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 10, 0, 0">
+                        <TextBlock Margin="0, 15, 0, 0">
 
                             <Run Text="Album"/>
 
@@ -85,19 +85,19 @@
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="0, 15, 0, 0">
 
                             <Run Text="Género"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="0, 15, 0, 0">
 
-                            <Run Text="FechaDeLanzamiento"/>
+                            <Run Text="Fecha de Lanzamiento"/>
 
                         </TextBlock>
 
-                        <TextBlock Margin="0, 20, 0, 0">
+                        <TextBlock Margin="0, 32, 0, 0">
 
                             <Run Text="Imagen"/>
 
@@ -122,17 +122,17 @@
                         <TextBox x:Name="Genero" Margin="0, 2, 0, 2"/>
 
                         <TextBox x:Name="FechaDeLanzamiento" Margin="0, 2, 0, 2"/>
-
-                        <Button x:Name="Imagen" Margin="0, 2, 0, 2" Height="31" Width="97" Click="Imagen_Click" Content="Choose file"/>
-                        <TextBlock x:Name="textBlock" Margin="0, 0, 1000, 0" Width="443"/>
-
+                        <TextBlock x:Name="fechaParametros" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" Text="mm/dd/aaaa" VerticalAlignment="Top" Width="1195"/>
+                        <TextBlock x:Name="textBlockImagen" Grid.Column="1" HorizontalAlignment="Left" Margin="160,0,0,0" Text="" VerticalAlignment="Top" Width="1195"/>
+                        <Button x:Name="Imagen" Margin="0, -15, 0, 2" Height="31" Width="150" Click="Imagen_Click" Content="Seleccionar archivo"/>
+                        
                     </StackPanel>
 
-                    <Button x:Name="actionButton" Grid.Column="1" Margin="0,0,0,-80" Click="Button_Click" VerticalAlignment="Bottom" Content="Create"/>
+                    <Button x:Name="actionButton" Grid.Column="1" Margin="0,0,0,-100" Click="Button_Click" VerticalAlignment="Bottom" Content="Crear"/>
 
                 </Grid>
 
-                <Button Margin="20, 0, 0, -150" Click="Button_Click">Cancel</Button>
+                <Button Margin="20, 0, 0, -170" Click="Button_Click">Cancelar</Button>
 
             </StackPanel>
 

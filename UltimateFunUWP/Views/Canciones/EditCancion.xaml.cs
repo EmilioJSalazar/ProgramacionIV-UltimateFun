@@ -53,6 +53,7 @@ namespace UltimateFunUWP.Views.Canciones
                 if (imageByte != null)
                 {
                     await result.SetSourceAsync(stream);
+                    this.imagenDefecto.Text = "";
                 }
                 
 
@@ -122,7 +123,7 @@ namespace UltimateFunUWP.Views.Canciones
             var httpHandler = new HttpClientHandler();
             var client = new HttpClient(httpHandler);
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("https://localhost:44344/api/canciones" + "/" + EditarCancion);
+            request.RequestUri = new Uri("https://localhost:44344/api/canciones" + "/" + EditarCancionID);
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
             HttpResponseMessage response = await client.SendAsync(request);
@@ -139,17 +140,19 @@ namespace UltimateFunUWP.Views.Canciones
             if (file != null)
             {
                 // Application now has read/write access to the picked file
+                this.imagenDefecto.Text = "";
                 this.imagenTexto.Text = "Imagen seleccionada: " + file.Name;
                 byte[] i = null;
                 Deserializar(i);
                 SerializarAsync(file);
             }
-            /*else
+            else
             {
                 //Deserializar(resultado.Imagen);
-                //this.imagen.Text = "Operation cancelled.";
-            }*/
-            
+                this.imagenDefecto.Text = "";
+                this.imagenTexto.Text = "Operación cancelada";
+            }
+
 
         }
 

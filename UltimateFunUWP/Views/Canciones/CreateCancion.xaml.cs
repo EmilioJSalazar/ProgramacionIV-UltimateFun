@@ -40,7 +40,7 @@ namespace UltimateFunUWP.Views
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if ((sender as Button).Content.ToString() == "Cancel")
+            if ((sender as Button).Content.ToString() == "Cancelar")
             {
                 Frame.Navigate(typeof(CancionesPage));
                 return;
@@ -117,13 +117,14 @@ namespace UltimateFunUWP.Views
             if (file != null)
             {
                 // Application now has read/write access to the picked file
-                this.textBlock.Text = "Picked photo: " + file.Name;
+                this.textBlockImagen.Text = "Imagen seleccionada: " + file.Name;
+                SerializarAsync(file);
             }
             else
             {
-                this.textBlock.Text = "Operation cancelled.";
+                this.textBlockImagen.Text = "Operación cancelada";
             }
-            SerializarAsync(file);
+            
 
         }
 

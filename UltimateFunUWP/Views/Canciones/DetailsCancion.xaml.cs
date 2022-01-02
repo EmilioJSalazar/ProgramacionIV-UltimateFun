@@ -39,20 +39,26 @@ namespace UltimateFunUWP.Views.Canciones
         }
         public async void Deserializar(byte[] imageByte)
         {
-            
-            using(InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
+
+            if (imageByte == null)
             {
-                using(DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
-                {
-                    writer.WriteBytes(imageByte);
-                    await writer.StoreAsync();
-                }
-                var result = new BitmapImage();
-                await result.SetSourceAsync(stream);
-
-                this.imagen.Source = result;
+                this.imagenTitulo.Text = "";
             }
+            else
+            {
+                using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
+                {
+                    using (DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
+                    {
+                        writer.WriteBytes(imageByte);
+                        await writer.StoreAsync();
+                    }
+                    var result = new BitmapImage();
+                    await result.SetSourceAsync(stream);
 
+                    this.imagen.Source = result;
+                }
+            }
         }
         public async void cargarInforfacion()
         {
