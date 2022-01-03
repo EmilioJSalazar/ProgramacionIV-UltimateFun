@@ -70,14 +70,14 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="ID" Width="50" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                                 <TextBlock Text="Nombre" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                                <TextBlock Text="Lugar de escuchar" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                                <TextBlock Text="Descripcion" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                                <TextBlock Text="Artista" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                                <TextBlock Text="Album" Width="150" Foreground="White" FontWeight="Bold"  FontFamily="Comic Sans MS"/>
-                                <TextBlock Text="Duracion" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                                <TextBlock Text="Genero" Width="100" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                                <TextBlock Text="FechaLanzamiento" Width="199" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                                <TextBlock Text="Imagen" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Lugar de escuchar" Width="180" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Descripcion" Width="180" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Artista" Width="180" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Album" Width="180" Foreground="White" FontWeight="Bold"  FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Duracion" Width="140" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Genero" Width="140" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="FechaLanzamiento" Width="205" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <!--<TextBlock Text="Imagen" Width="150" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans MS"/>-->
                             </StackPanel>
                         </DataTemplate>
                     </ListView.HeaderTemplate>
@@ -97,15 +97,15 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock x:Name="idText" Text="{x:Bind Path=CancionID}" Width="45"/>
                                 <TextBlock Text="{x:Bind Path=Nombre}" Width="95"/>
-                                <TextBlock Text="{x:Bind Path=LugarDeEscuchar}" Width="145"/>
-                                <TextBlock Text="{x:Bind Path=Descripcion}" Width="145"/>
-                                <TextBlock Text="{x:Bind Path=Artista}" Width="145"/>
-                                <TextBlock Text="{x:Bind Path=Album}" Width="145"/>
-                                <TextBlock Text="{x:Bind Path=Duracion}" Width="95"/>
-                                <TextBlock Text="{x:Bind Path=Genero}" Width="95"/>
-                                <TextBlock Text="{x:Bind Path=FechaLanzamiento}" Width="145"/>
+                                <TextBlock Text="{x:Bind Path=LugarDeEscuchar}" Width="175"/>
+                                <TextBlock Text="{x:Bind Path=Descripcion}" Width="175"/>
+                                <TextBlock Text="{x:Bind Path=Artista}" Width="175"/>
+                                <TextBlock Text="{x:Bind Path=Album}" Width="190"/>
+                                <TextBlock Text="{x:Bind Path=Duracion}" Width="140"/>
+                                <TextBlock Text="{x:Bind Path=Genero}" Width="145"/>
+                                <TextBlock Text="{x:Bind Path=FechaLanzamiento}" Width="210"/>
                                 <!--<Image x:Name="imagenCampo" Image="{x:Bind }" Width="80" Height="130"/>-->
-                                <Image x:Name="campoImagen" Source="{x:Bind Path=CurrentImage}" HorizontalAlignment="Left" Width="145" Height="150"/>
+                                <!--<Image x:Name="campoImagen" Source="{x:Bind Path=CurrentImage}" HorizontalAlignment="Left" Width="145" Height="150"/>-->
                                 <!--holiiiii-->
                                 <!--<Image Source="/Assets/LockScreenLogo.scale-200.png" Width="150" Height="150"/>-->
                                 <!--<TextBlock Text="{x:Bind Imagen, Mode=TwoWay}" Width="150"/>-->

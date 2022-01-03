@@ -47,13 +47,13 @@
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="ID" Width="100" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                            <TextBlock Text="Nombre" Width="150" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                            <TextBlock Text="Lugar de jugar" Width="200" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                            <TextBlock Text="Descripcion" Width="200" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                            <TextBlock Text="Desarrollador" Width="200" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="ID" Width="150" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="Nombre" Width="250" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="Lugar de jugar" Width="250" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="Descripcion" Width="250" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <TextBlock Text="Desarrollador" Width="250" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
                             <TextBlock Text="FechaLanzamiento" Width="200" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                            <TextBlock Text="Imagen" Width="150" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+                            <!--<TextBlock Text="Imagen" Width="150" Foreground="White" FontFamily="Comic Sans MS" FontWeight="Bold"/>-->
                         </StackPanel>
                     </DataTemplate>
                 </ListView.HeaderTemplate>
@@ -69,13 +69,13 @@
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:VideojuegosViewModel">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{x:Bind VideojuegoID}" Width="100"/>
-                            <TextBlock Text="{x:Bind Nombre}" Width="150"/>
-                            <TextBlock Text="{x:Bind LugarDeJugar}" Width="200"/>
-                            <TextBlock Text="{x:Bind Descripcion}" Width="200"/>
-                            <TextBlock Text="{x:Bind Desarrollador}" Width="200"/>
-                            <TextBlock Text="{x:Bind FechaLanzamiento}" Width="200"/>
-                            <TextBlock Text="{x:Bind Imagen}" Width="150"/>
+                            <TextBlock Text="{x:Bind VideojuegoID}" Width="145"/>
+                            <TextBlock Text="{x:Bind Nombre}" Width="245"/>
+                            <TextBlock Text="{x:Bind LugarDeJugar}" Width="245"/>
+                            <TextBlock Text="{x:Bind Descripcion}" Width="245"/>
+                            <TextBlock Text="{x:Bind Desarrollador}" Width="245"/>
+                            <TextBlock Text="{x:Bind FechaLanzamiento}" Width="245"/>
+                            <!--<TextBlock Text="{x:Bind Imagen}" Width="150"/>-->
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
