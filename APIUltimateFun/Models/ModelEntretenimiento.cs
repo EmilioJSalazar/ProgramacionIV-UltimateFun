@@ -58,5 +58,7 @@ namespace APIUltimateFun.Models
                 .WithOptional(e => e.AspNetUser)
                 .HasForeignKey(e => e.Usuario_Id);
         }
+
+        public System.Data.Entity.DbSet<APIUltimateFun.Models.Usuarios> Usuarios { get; set; }
     }
 }
