@@ -91,6 +91,10 @@ Una vez abierto la API y La aplicacion universal de windows deberá relizar lo s
 
   
   15. Introducir la siguiente linea: Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+  
+  ![image](https://user-images.githubusercontent.com/62667937/147891985-bf61b768-2aa7-49b1-8365-14a3caf52f59.png)
+
+  
   16. Abrir los archivos dentro de la API y dirigirse al archivo Webconfig y dentro de el, cambiar el nombre
       del servidor (colocar el nombre se su servidor e instancia).
       
