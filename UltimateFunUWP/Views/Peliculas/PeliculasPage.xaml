@@ -50,15 +50,15 @@
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="ID" Width="50" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Tipo" Width="100" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Nombre" Width="100" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Tipo" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Nombre" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                             <TextBlock Text="Lugar de ver" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                             <TextBlock Text="Descripcion" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                             <TextBlock Text="Actores" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                             <TextBlock Text="Director" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Duracion" Width="100" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <TextBlock Text="Duracion" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
                             <TextBlock Text="FechaLanzamiento" Width="200" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-                            <TextBlock Text="Imagen" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                            <!--<TextBlock Text="Imagen" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>-->
                         </StackPanel>
                     </DataTemplate>
                 </ListView.HeaderTemplate>
@@ -75,15 +75,15 @@
                     <DataTemplate x:DataType="local:PeliculasViewModel">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{x:Bind PeliculaID}" Width="50"/>
-                            <TextBlock Text="{x:Bind Tipo}" Width="100"/>
-                            <TextBlock Text="{x:Bind Nombre}" Width="100"/>
-                            <TextBlock Text="{x:Bind LugarDeVisualizacion}" Width="150"/>
-                            <TextBlock Text="{x:Bind Descripcion}" Width="150"/>
-                            <TextBlock Text="{x:Bind Actores}" Width="150"/>
-                            <TextBlock Text="{x:Bind Director}" Width="150"/>
-                            <TextBlock Text="{x:Bind Duracion}" Width="100"/>
+                            <TextBlock Text="{x:Bind Tipo}" Width="145"/>
+                            <TextBlock Text="{x:Bind Nombre}" Width="145"/>
+                            <TextBlock Text="{x:Bind LugarDeVisualizacion}" Width="145"/>
+                            <TextBlock Text="{x:Bind Descripcion}" Width="145"/>
+                            <TextBlock Text="{x:Bind Actores}" Width="145"/>
+                            <TextBlock Text="{x:Bind Director}" Width="165"/>
+                            <TextBlock Text="{x:Bind Duracion}" Width="160"/>
                             <TextBlock Text="{x:Bind FechaLanzamiento}" Width="200"/>
-                            <TextBlock Text="{x:Bind Imagen}" Width="150"/>
+                            <!--<TextBlock Text="{x:Bind Imagen}" Width="150"/>-->
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
