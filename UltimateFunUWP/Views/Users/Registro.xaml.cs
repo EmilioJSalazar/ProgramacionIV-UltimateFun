@@ -26,12 +26,14 @@ namespace UltimateFunUWP.Views.Users
     /// </summary>
     public sealed partial class Registro : Page
     {
-        public Registro()
+        public Registro(string nombreUsuario, string tipoUsuario)
         {
             this.InitializeComponent();
+            this.campoNombre.Text = nombreUsuario;
+            this.campoTipoNombre.Text = "("+tipoUsuario+")";
         }
 
-        private async void RegisterButton_Click(object sender, RoutedEventArgs e)
+        /*private async void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             var usuario = new UsersViewModel
             {
@@ -53,6 +55,13 @@ namespace UltimateFunUWP.Views.Users
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();
             }
             Frame.Navigate(typeof(UsersPage));
+            Frame.Navigate(typeof(HomePage));
+        }*/
+
+        private void RegisterButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(HomePage));
+
         }
     }
 }

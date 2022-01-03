@@ -16,13 +16,14 @@
             </LinearGradientBrush>
         </Grid.Background>
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="Register" FontSize="36" Margin="4" TextAlignment="Center"/>
-            <TextBlock Text="Crear new account" FontSize="20" Margin="4" TextAlignment="Center"/>
+            <TextBlock Text="Bienvenid@" FontSize="36" Margin="0,200,0,0" TextAlignment="Center"/>
+            <TextBlock x:Name="campoNombre" Text="" FontSize="50" Margin="4" TextAlignment="Center"/>
+            <TextBlock x:Name="campoTipoNombre" Text="" FontSize="20" Margin="4" TextAlignment="Center" Foreground="Gray"/>
             <TextBlock x:Name="ErrorMessage" Text="" FontSize="20" Margin="4" Foreground="Red" TextAlignment="Center"/>
 
 
 
-            <TextBlock Text="Email" Margin="0,0,0,20"
+            <!--<TextBlock Text="Email" Margin="0,0,0,20"
                TextWrapping="Wrap" Width="300"
                TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
             <TextBox x:Name="EmailTextBox" Margin="4" Width="250"/>
@@ -35,9 +36,9 @@
             <TextBlock Text="Confirm password" Margin="0,0,0,20"
                TextWrapping="Wrap" Width="300"
                TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-            <PasswordBox x:Name="ConfirmPasswordTextBox" Margin="4" Width="250"/>
+            <PasswordBox x:Name="ConfirmPasswordTextBox" Margin="4" Width="250"/>-->
 
-            <Button x:Name="Register" Content="Register" Background="DodgerBlue" Foreground="White"
+            <Button x:Name="irMenu" Content="Menú Principal" Background="DodgerBlue" Foreground="White"
         Click="RegisterButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20"/>
             
 

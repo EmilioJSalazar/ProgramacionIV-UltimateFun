@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:UltimateFunUWP.ViewModels"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
@@ -20,32 +21,79 @@
             -->
 
             <StackPanel Orientation="Vertical">
-                <TextBlock Text="Login" FontSize="36" Margin="4" TextAlignment="Center"/>
+                <TextBlock Text="Iniciar Sesión" FontSize="36" Margin="0,80,0,0" TextAlignment="Center"/>
                 <TextBlock x:Name="ErrorMessage" Text="" FontSize="20" Margin="4" Foreground="Red" TextAlignment="Center"/>
 
 
 
-                <TextBlock Text="Enter your email below" Margin="0,0,0,20"
+                <TextBlock Text="Usuario" Margin="0,0,0,0"
                TextWrapping="Wrap" Width="300"
                TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                <TextBox x:Name="EmailTextBox" Margin="4" Width="250"/>
+                <TextBox x:Name="UsuarioTextBox" Margin="0,0,0,20" Width="250"/>
 
-                <TextBlock Text="Enter your password below" Margin="0,0,0,20"
+                <TextBlock Text="Contraseña" Margin="0,0,0,0"
                TextWrapping="Wrap" Width="300"
                TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                <PasswordBox x:Name="PasswordTextBox" Margin="4" Width="250"/>
+                <PasswordBox x:Name="PasswordTextBox" Margin="0,0,0,20" Width="250"/>
 
-                <Button x:Name="LoginButton" Content="Login" Background="DodgerBlue" Foreground="White"
+                <Button x:Name="LoginButton" Content="Ingresar" Background="DodgerBlue" Foreground="White"
         Click="LoginButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20"/>
-                <TextBlock Text="Don't have an account?"
+               <!-- <TextBlock Text="Don't have an account?"
                 TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
                 <TextBlock x:Name="RegisterButtonTextBlock" Text="Register now"
                PointerPressed="RegisterButtonTextBlock_OnPointerPressed"
                Foreground="DodgerBlue"
-               TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+               TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>-->
+                <ListView x:Name="Lista" Grid.Row="0" Padding="0" Grid.ColumnSpan="2" Margin="500,0,500,-305"
+                      ScrollViewer.VerticalScrollBarVisibility="Visible" RightTapped="Lista_RightTapped">
+                    <ListView.Resources>
+                        <MenuFlyout x:Name="menu">
+                            <MenuFlyout.Items>
+                                <MenuFlyoutItem  x:Name="Details" Text="Detalles" Click="Details_Click" Icon="View"/>
+                                <MenuFlyoutItem  x:Name="Delete" Text="Eliminar" Click="Delete_Click" Icon="Delete"/>
+                                <MenuFlyoutItem  x:Name="Edit" Text="Editar" Click="Edit_Click" Icon="Edit"/>
 
+
+                            </MenuFlyout.Items>
+                        </MenuFlyout>
+
+                    </ListView.Resources>
+
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="ID" Width="50" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Nombre" Width="100" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="Usuario" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                <TextBlock Text="tipo" Width="150" Foreground="#FFE87056" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+                                
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+
+                    <!--<FlyoutBase.AttachedFlyout>
+                    <Custom:CommandBarFlyout Placement="Right" x:Name="CommandBarFlyout1">
+                        <AppBarButton Label="Edit" Icon="Edit" ToolTipService.ToolTip="Edit" Click="OnElementClicked" />
+                        <AppBarButton Label="Details" Icon="View" ToolTipService.ToolTip="Details" Click="OnElementClicked" />
+                        <AppBarButton Label="Delete" Icon="Delete" ToolTipService.ToolTip="Delete" Click="OnElementClicked" />
+                    </Custom:CommandBarFlyout>
+                </FlyoutBase.AttachedFlyout>-->
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:UsuariosViewModel">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{x:Bind Id_usuario}" Width="50"/>
+                                <TextBlock Text="{x:Bind Nombre}" Width="100"/>
+                                <TextBlock Text="{x:Bind Usuario}" Width="150"/>
+                                <TextBlock Text="{x:Bind Tipo_usuario}" Width="150"/>
+                                
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
             </StackPanel>
         </Grid>
     </Grid>
+    
 </Page>

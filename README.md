@@ -91,6 +91,10 @@ Una vez abierto la API y La aplicacion universal de windows deberá relizar lo s
 
   
   15. Introducir la siguiente linea: Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+  
+  ![image](https://user-images.githubusercontent.com/62667937/147891985-bf61b768-2aa7-49b1-8365-14a3caf52f59.png)
+
+  
   16. Abrir los archivos dentro de la API y dirigirse al archivo Webconfig y dentro de el, cambiar el nombre
       del servidor (colocar el nombre se su servidor e instancia).
       
@@ -109,6 +113,31 @@ Ejecutar soluciones:
 
  1. Ejecutar la API, dando clic derecho sobre la solucion, seleccionar Depurar y finalmente nueva instancia 
  2. Ejecutar la aplicacion UWP, dando clic derecho sobre la solucion, seleccionar Depurar y finalmente nueva instancia 
+ 3. Los usuarios válidos dentro de la base de datos son:
+
+
+    Usuario: Patty
+    
+    
+    Contraseña: 123
+    
+    
+    Usuario: Dome
+    
+    
+    Contraseña: 123
+    
+    
+    Usuario: Emilio
+    
+    
+    Contraseña: 123
+    
+    
+    Usuario: Juan
+    
+    
+    Contraseña: 123
  
  
  ![image](https://user-images.githubusercontent.com/62667937/147863290-f614b3a5-c298-4fe3-b1f0-3aec3db66960.png)
