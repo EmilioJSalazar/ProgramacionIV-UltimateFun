@@ -113,6 +113,15 @@ Ejecutar soluciones:
 
  1. Ejecutar la API, dando clic derecho sobre la solucion, seleccionar Depurar y finalmente nueva instancia 
  2. Ejecutar la aplicacion UWP, dando clic derecho sobre la solucion, seleccionar Depurar y finalmente nueva instancia 
+ 3. Los usuarios válidos dentro de la base de datos son:
+    Usuario: Patty
+    Contraseña: 123
+    Usuario: Dome
+    Contraseña: 123
+    Usuario: Emilio
+    Contraseña: 123
+    Usuario: Juan
+    Contraseña: 123
  
  
  ![image](https://user-images.githubusercontent.com/62667937/147863290-f614b3a5-c298-4fe3-b1f0-3aec3db66960.png)
