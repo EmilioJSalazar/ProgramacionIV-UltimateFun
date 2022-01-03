@@ -116,10 +116,16 @@ Ejecutar soluciones:
  3. Los usuarios válidos dentro de la base de datos son:
     Usuario: Patty
     Contraseña: 123
+    
+    
     Usuario: Dome
     Contraseña: 123
+    
+    
     Usuario: Emilio
     Contraseña: 123
+    
+    
     Usuario: Juan
     Contraseña: 123
  
