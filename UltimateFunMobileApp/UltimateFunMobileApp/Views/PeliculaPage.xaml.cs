@@ -22,7 +22,7 @@ namespace UltimateFunMobileApp.Views
             this.BindingContext = this;
         }
 
-        private async void Button_Click(object sender, EventArgs e)
+        /*private async void Button_Click(object sender, EventArgs e)
         {
             var httpHandler = new HttpClientHandler();
             var request = new HttpRequestMessage();
@@ -38,23 +38,16 @@ namespace UltimateFunMobileApp.Views
             var resultado = JsonConvert.DeserializeObject<List<Pelicula>>(content);
 
             Lista.ItemsSource = resultado;
-
-        }
+        
+        }*/
 
         private void Lista_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var detailsPeli = e.Item as Pelicula;
             Navigation.PushAsync(new DetailsPeliculaPage(detailsPeli.PeliculaID,detailsPeli.Tipo,detailsPeli.Nombre,detailsPeli.LugarDeVisualizacion,
                 detailsPeli.Descripcion,detailsPeli.Actores,detailsPeli.Director,detailsPeli.Duracion,detailsPeli.FechaLanzamiento));
-            //ListView movies = (ListView)sender;
-            //menu.ShowAt(movies, e.GetPosition(movies));
-            //var pel = ((FrameworkElement)e.OriginalSource).DataContext as PeliculasViewModel;
-            //peliSeleccionada = pel.PeliculaID;
-            //DetailsPelicula.detallePeli = pel.PeliculaID;
-            //EditPelicula.EditarPeliID = pel.PeliculaID;
-
-
         }
+
         private List<Pelicula> pelis;
         private async void CargarPeli()
         {

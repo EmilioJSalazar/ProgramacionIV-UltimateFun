@@ -23,7 +23,7 @@ namespace UltimateFunMobileApp.Views
             this.BindingContext = this;
         }
 
-        private async void Button_Click(object sender, EventArgs e)
+        /*private async void Button_Click(object sender, EventArgs e)
         {
             var httpHandler = new HttpClientHandler();
             var request = new HttpRequestMessage();
@@ -40,30 +40,13 @@ namespace UltimateFunMobileApp.Views
 
             Lista.ItemsSource = resultado;
 
-        }
-
-        //public static Image Base64StringIntoImage(string str64)
-        //{
-        //    byte[] img = Convert.FromBase64String(str64);
-        //    MemoryStream ms = new MemoryStream(img);
-        //    return ImageSource.FromStream( ms);
-        //}
-        
-        
+        }*/
 
         private void Lista_ItemTapped(object sender, ItemTappedEventArgs e)
-
         {
             var details= e.Item as Cancion;
             Navigation.PushAsync(new DetailsCancionPage(details.CancionID,details.Nombre,details.LugarDeEscuchar,details.Descripcion,
                details.Artista,details.Album,details.Duracion,details.Genero,details.FechaLanzamiento));
-            //var song = 
-            //var song = ((FrameworkElement)e.OriginalSource).DataContext as CancionesViewModel;
-            //cancionSeleccionada = song.CancionID;
-            //DetailsCancion.detalleSong = song.CancionID;
-
-
-
         }
 
         private List<Cancion> canciones;

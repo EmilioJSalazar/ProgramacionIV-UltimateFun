@@ -29,7 +29,7 @@
                        Background="#5313F2"
                         >
             </SearchBar>
-            <Button Text="Llamar API" Clicked="Button_Click"/>
+            <!--Button Text="Llamar API" Clicked="Button_Click"/-->
             <ListView x:Name="Lista" HasUnevenRows="True" ItemTapped="Lista_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
