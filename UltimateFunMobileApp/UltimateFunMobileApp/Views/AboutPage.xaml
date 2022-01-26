@@ -11,27 +11,29 @@
     
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Accent">LightCyan</Color>
+            <Color x:Key="Accent">black</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid BackgroundColor="LightCyan">
+    <Grid BackgroundColor="black">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+        <!--StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="homero.jpg" VerticalOptions="Center" HeightRequest="64" />
+                    <Image Source="homeroApp.png" VerticalOptions="Center" HeightRequest="264" />
                 </ContentView>
             </StackLayout>
-        </StackLayout>
+        </StackLayout-->
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Label Text="Ultimate Fun" FontSize="Title"/>
-                <Label Text="Es una aplicación dónde podrás encontrar los títulos de las últimas tendencias en el mundo del entretenimiento o sus próximos lanzamientos y así puedas decidir  fácilmente la opción más divertida y entretenida de pasar tu día, tarde o noche!  Así que…….. ¿Qué deseas hacer hoy?" FontSize="16" Padding="0,0,0,0"/>
-               
+                <Image Source="homeroAppXa.png" VerticalOptions="Center" HeightRequest="264" />
+
+                <Label Text="Ultimate Fun" FontSize="Title" TextColor="White"/>
+                <Label Text="Es una aplicación dónde podrás encontrar los títulos de las últimas tendencias en el mundo del entretenimiento o sus próximos lanzamientos y así puedas decidir  fácilmente la opción más divertida y entretenida de pasar tu día, tarde o noche!  Así que…….. ¿Qué deseas hacer hoy?" FontSize="16" Padding="0,0,0,0" TextColor="White"/>
+                <Label Text=" jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj" TextColor="Black"/>
                 <Button Text="PELICULAS Y SERIES" Clicked="Button_Clicked" />
                 <Button Text="CANCIONES" Clicked="Button_Clicked_1"/>
                 <Button Text="VIDEOJUEGOS" Clicked="Button_Clicked_2"/>

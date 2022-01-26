@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UltimateFunMobileApp.Views.PeliculaPage"
-            xmlns:converters="clr-namespace:UltimateFunMobileApp.Converters">
+            xmlns:converters="clr-namespace:UltimateFunMobileApp.Converters"
+             Title="Peliculas/Series">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
@@ -10,16 +11,22 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Movies!"
+        
+        <StackLayout BackgroundColor="Black">
+            <Label Text="Bienvenidos a las Peliculas/Series del momento!"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" 
+                   TextColor="White"/>
             <SearchBar x:Name="filterText"
                        Grid.Row="0"
                        Grid.Column="0"
                        IsVisible="true"
                        Placeholder="Search here to Filter"
                        TextChanged="SearchBar_TextChanged"
+                       TextColor="White"
+                       PlaceholderColor="White"
+                       CancelButtonColor="White"
+                       Background="#5313F2"
                         >
             </SearchBar>
             <Button Text="Llamar API" Clicked="Button_Click"/>
@@ -32,8 +39,8 @@
 
                                 <Image Source="{Binding Imagen,Converter={StaticResource ByteArrayToImage}}" WidthRequest="300" HeightRequest="200"/>
 
-                                <Label Text="{Binding PeliculaID}" FontSize="Title" TextColor="DarkCyan" HorizontalOptions="Center"/>
-                                <Label Text="{Binding Nombre}" FontSize="Title" TextColor="DarkCyan" HorizontalOptions="Center"/>
+                                <!--Label Text="{Binding PeliculaID}" FontSize="Title" TextColor="Cyan" HorizontalOptions="Center"/-->
+                                <Label Text="{Binding Nombre}" FontSize="Title" TextColor="Cyan" HorizontalOptions="Center"/>
 
                             </StackLayout>
                         </ViewCell>

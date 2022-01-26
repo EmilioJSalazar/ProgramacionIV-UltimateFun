@@ -4,8 +4,9 @@ using System.Text;
 
 namespace UltimateFunMobileApp.ViewModels
 {
-    class VideojuegoViewMode
+    class VideojuegoViewMode : BaseViewModel
     {
-       
+
+
     }
 }

@@ -5,32 +5,34 @@
     <ContentPage.Content>
         <ScrollView>
 
-            <StackLayout BackgroundColor="DarkGray">
-                <Label Text="DETALLES DE LA CANCION SELECCIONADA"
-                TextColor="Black"
+            <StackLayout BackgroundColor="Black">
+                <Label Text="DETALLES DE LA CANCION SELECCIONADA "
+                TextColor="White"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Label Text=" ID : " TextColor="Black" />
-            <Label Text=" " x:Name="EntryId" TextColor="Bisque"  />
-                <Label Text=" Nombre : " TextColor="Black"/>
-            <Label Text="" x:Name="BloqueNombre" TextColor="Bisque"  />
-                <Label Text=" Lugar de escuchar : " TextColor="Black" />
-            <Label Text="" x:Name="BloqueLugar" TextColor="Bisque" />
-                <Label Text=" Descripcion: " TextColor="Black" />
-            <Label Text="" x:Name="BloqueDes" TextColor="Bisque" />
-                <Label Text=" Artista : " TextColor="Black" />
-            <Label Text="" x:Name="BloqueArtista" TextColor="Bisque" />
-                <Label Text=" Album : " TextColor="Black" />
-            <Label Text="" x:Name="BloqueAlbum" TextColor="Bisque" />
-                <Label Text=" Duracion : " TextColor="Black" />
-            <Label Text="" x:Name="BloqueDuracion" TextColor="Bisque" />
-                <Label Text=" Genero : " TextColor="Black" />
-            <Label Text="" x:Name="BloqueGenero" TextColor="Bisque" />
+                <Label Text=" ID : " TextColor="White" />
+                <Label Text=" " x:Name="EntryId" TextColor="Cyan"  />
+                <Label Text=" Nombre : " TextColor="White"/>
+                <Label Text="" x:Name="BloqueNombre" TextColor="Cyan"  />
+                <Label Text=" Lugar de escuchar : " TextColor="White" />
+            <Label Text="" x:Name="BloqueLugar" TextColor="Cyan" />
+                <Label Text=" Descripcion: " TextColor="White" />
+            <Label Text="" x:Name="BloqueDes" TextColor="Cyan" />
+                <Label Text=" Artista : " TextColor="White" />
+            <Label Text="" x:Name="BloqueArtista" TextColor="Cyan" />
+                <Label Text=" Album : " TextColor="White" />
+            <Label Text="" x:Name="BloqueAlbum" TextColor="Cyan" />
+                <Label Text=" Duracion : " TextColor="White" />
+            <Label Text="" x:Name="BloqueDuracion" TextColor="Cyan" />
+                <Label Text=" Genero : " TextColor="White" />
+            <Label Text="" x:Name="BloqueGenero" TextColor="Cyan" />
+                <Label Text=" Fecha Lanzamiento : " TextColor="White" />
+            <Label Text="" x:Name="BloqueFecha" TextColor="Cyan" />
                 <Label Text=" Fecha Lanzamiento : " TextColor="Black" />
-            <Label Text="" x:Name="BloqueFecha" TextColor="Bisque" />
-              
 
-        </StackLayout>
+
+
+            </StackLayout>
         </ScrollView>
 
     </ContentPage.Content>
