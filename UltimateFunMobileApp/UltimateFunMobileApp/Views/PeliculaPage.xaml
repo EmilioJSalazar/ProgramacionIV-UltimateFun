@@ -14,6 +14,14 @@
             <Label Text="Welcome to Movies!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <SearchBar x:Name="filterText"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       IsVisible="true"
+                       Placeholder="Search here to Filter"
+                       TextChanged="SearchBar_TextChanged"
+                        >
+            </SearchBar>
             <Button Text="Llamar API" Clicked="Button_Click"/>
             <ListView x:Name="Lista" HasUnevenRows="True" ItemTapped="Lista_ItemTapped">
                 <ListView.ItemTemplate>
