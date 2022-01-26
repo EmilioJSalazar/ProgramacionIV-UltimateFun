@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UltimateFunMobileApp.Views.DetailsJuegosPage">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Background="MediumPurple">
+                <Label Text="DETALLES DEL VIDEOJUEGO SELECCIONADO"
+                       TextColor="Black"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text=" ID : " TextColor="Black" />
+                <Label Text="" x:Name="EntryId" TextColor="Bisque"  />
+                <Label Text=" Nombre : " TextColor="Black" />
+                <Label Text="" x:Name="BloqueNombre" TextColor="Bisque"  />
+                <Label Text=" Lugar para Jugar : " TextColor="Black" />
+                <Label Text="" x:Name="BloqueLugar" TextColor="Bisque" />
+                <Label Text=" Descripcion: " TextColor="Black" />
+                <Label Text="" x:Name="BloqueDes" TextColor="Bisque" />
+                <Label Text=" Desarrollador : " TextColor="Black" />
+                <Label Text="" x:Name="BloqueDesarrollador" TextColor="Bisque" />
+                <Label Text=" Fecha Lanzamiento : " TextColor="Black"/>
+                <Label Text="" x:Name="BloqueFecha" TextColor="Bisque" />
+                
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

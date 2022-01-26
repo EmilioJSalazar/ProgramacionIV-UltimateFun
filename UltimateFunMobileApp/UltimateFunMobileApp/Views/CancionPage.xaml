@@ -1,17 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="UltimateFunMobileApp.Views.CancionPage">
+             x:Class="UltimateFunMobileApp.Views.CancionPage"
+            xmlns:converters="clr-namespace:UltimateFunMobileApp.Converters">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
+        
         <StackLayout>
+            
+            
             <Label Text="Welcome to Songs!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Button Text="Llamar API" Clicked="Button_Click"/>
-            <ListView x:Name="Lista">
+            <ListView x:Name="Lista" HasUnevenRows="True" ItemTapped="Lista_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding CancionID}" Detail="{Binding Nombre}"/>
+                        <ViewCell>
+                            
+                            <StackLayout HorizontalOptions="Center">
+                                
+                                <Image Source="{Binding Imagen,Converter={StaticResource ByteArrayToImage}}" WidthRequest="300" HeightRequest="200"/>
+
+                                <Label Text="{Binding CancionID}" FontSize="Title" TextColor="DarkCyan" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Nombre}" FontSize="Title" TextColor="DarkCyan" HorizontalOptions="Center"/>
+
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

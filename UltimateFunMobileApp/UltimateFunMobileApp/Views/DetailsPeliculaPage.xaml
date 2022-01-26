@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UltimateFunMobileApp.Views.DetailsPeliculaPage">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout BackgroundColor="LightBlue">
+                <Label Text="DETALLES DE LA PELICULA O SERIE SELECCIONADA"
+                       TextColor="Black"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text=" ID : " TextColor="Black" />
+                <Label Text="" x:Name="EntryId" TextColor="DarkBlue"  />
+                <Label Text=" Tipo    (Pellicula=0     Serie=1) : " TextColor="Black" />
+                <Label Text="" x:Name="BloqueTipo" TextColor="DarkBlue"  />
+                <Label Text=" Nombre : " TextColor="Black"/>
+                <Label Text="" x:Name="BloqueNombre" TextColor="DarkBlue"  />
+                <Label Text=" Lugar de Visualizacion : " TextColor="Black" />
+                <Label Text="" x:Name="BloqueLugar" TextColor="DarkBlue" />
+                <Label Text=" Descripcion: " TextColor="Black" />
+                <Label Text="" x:Name="BloqueDes" TextColor="DarkBlue" />
+                <Label Text=" Actores : " TextColor="Black"/>
+                <Label Text="" x:Name="BloqueActor" TextColor="DarkBlue" />
+                <Label Text=" Director : " TextColor="Black"/>
+                <Label Text="" x:Name="BloqueDirec" TextColor="DarkBlue" />
+                <Label Text=" Duracion : " TextColor="Black" />
+                <Label Text="" x:Name="BloqueDuracion" TextColor="DarkBlue" />
+                <Label Text=" Fecha Lanzamiento : " TextColor="Black" />
+                <Label Text="" x:Name="BloqueFecha" TextColor="DarkBlue" />
+                
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -37,5 +37,20 @@ namespace UltimateFunMobileApp.Views
             Lista.ItemsSource = resultado;
 
         }
+
+        private void Lista_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var detailsJuego = e.Item as Videojuego;
+            Navigation.PushAsync(new DetailsJuegosPage(detailsJuego.VideojuegoID, detailsJuego.Nombre, detailsJuego.LugarDeJugar,
+                detailsJuego.Descripcion,detailsJuego.Desarrollador, detailsJuego.FechaLanzamiento));
+            //ListView movies = (ListView)sender;
+            //menu.ShowAt(movies, e.GetPosition(movies));
+            //var pel = ((FrameworkElement)e.OriginalSource).DataContext as PeliculasViewModel;
+            //peliSeleccionada = pel.PeliculaID;
+            //DetailsPelicula.detallePeli = pel.PeliculaID;
+            //EditPelicula.EditarPeliID = pel.PeliculaID;
+
+
+        }
     }
 }

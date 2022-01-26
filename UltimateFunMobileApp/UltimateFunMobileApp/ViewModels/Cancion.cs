@@ -26,4 +26,6 @@ namespace UltimateFunMobileApp.ViewModels
 
         public byte[] Imagen { get; set; }
     }
+
+
 }
