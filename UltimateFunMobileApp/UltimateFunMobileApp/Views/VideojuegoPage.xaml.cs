@@ -72,7 +72,7 @@ namespace UltimateFunMobileApp.Views
         {
             if (string.IsNullOrEmpty(searchText))
                 return videojuegos;
-            return videojuegos.Where(p => p.Nombre.StartsWith(searchText));
+            return videojuegos.Where(p => p.Nombre.StartsWith(searchText, StringComparison.OrdinalIgnoreCase));
         }
 
         private void ListView_Refreshing(object sender, EventArgs e)
