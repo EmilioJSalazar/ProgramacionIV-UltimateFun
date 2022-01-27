@@ -46,7 +46,7 @@ namespace UltimateFunMobileApp.Views
         {
             var details= e.Item as Cancion;
             Navigation.PushAsync(new DetailsCancionPage(details.CancionID,details.Nombre,details.LugarDeEscuchar,details.Descripcion,
-               details.Artista,details.Album,details.Duracion,details.Genero,details.FechaLanzamiento));
+               details.Artista,details.Album,details.Duracion,details.Genero,details.FechaLanzamiento,details.Imagen));
         }
 
         private List<Cancion> canciones;

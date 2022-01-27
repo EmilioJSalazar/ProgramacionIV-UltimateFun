@@ -10,6 +10,7 @@
                        TextColor="White"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+                <Image Source="" x:Name="BloqueImagen" WidthRequest="300" HeightRequest="200"/>
                 <Label Text=" ID : " TextColor="White" />
                 <Label Text="" x:Name="EntryId" TextColor="Cyan"  />
                 <Label Text=" Nombre : " TextColor="White" />

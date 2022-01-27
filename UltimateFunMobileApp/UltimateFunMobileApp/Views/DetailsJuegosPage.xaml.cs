@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace UltimateFunMobileApp.Views
     public partial class DetailsJuegosPage : ContentPage
     {
         public DetailsJuegosPage(int VideojuegoID, string Nombre, string LugarDeJugar, string Descripcion, string Desarrollador, 
-            DateTime FechaLanzamiento)
+            DateTime FechaLanzamiento, byte[] Imagen)
         {
             InitializeComponent();
 
@@ -23,6 +24,18 @@ namespace UltimateFunMobileApp.Views
             BloqueDes.Text = Descripcion;
             BloqueDesarrollador.Text = Desarrollador;
             BloqueFecha.Text = FechaLanzamiento.ToString();
+            BloqueImagen.Source = Convertidor(Imagen);
+        }
+
+        private ImageSource Convertidor(object value)
+        {
+            ImageSource retSource = null;
+            if (value != null)
+            {
+                byte[] imageAsBytes = (byte[])value;
+                retSource = ImageSource.FromStream(() => new MemoryStream(imageAsBytes));
+            }
+            return retSource;
         }
     }
 }

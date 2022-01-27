@@ -20,6 +20,7 @@ namespace UltimateFunMobileApp.Views
             CargarPeli();
             Lista.ItemsSource = GetPeliculas();
             this.BindingContext = this;
+
         }
 
         /*private async void Button_Click(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace UltimateFunMobileApp.Views
         {
             var detailsPeli = e.Item as Pelicula;
             Navigation.PushAsync(new DetailsPeliculaPage(detailsPeli.PeliculaID,detailsPeli.Tipo,detailsPeli.Nombre,detailsPeli.LugarDeVisualizacion,
-                detailsPeli.Descripcion,detailsPeli.Actores,detailsPeli.Director,detailsPeli.Duracion,detailsPeli.FechaLanzamiento));
+                detailsPeli.Descripcion,detailsPeli.Actores,detailsPeli.Director,detailsPeli.Duracion,detailsPeli.FechaLanzamiento,detailsPeli.Imagen));
         }
 
         private List<Pelicula> pelis;

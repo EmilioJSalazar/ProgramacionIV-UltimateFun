@@ -45,7 +45,7 @@ namespace UltimateFunMobileApp.Views
         {
             var detailsJuego = e.Item as Videojuego;
             Navigation.PushAsync(new DetailsJuegosPage(detailsJuego.VideojuegoID, detailsJuego.Nombre, detailsJuego.LugarDeJugar,
-                detailsJuego.Descripcion,detailsJuego.Desarrollador, detailsJuego.FechaLanzamiento));
+                detailsJuego.Descripcion,detailsJuego.Desarrollador, detailsJuego.FechaLanzamiento, detailsJuego.Imagen));
         }
 
         private List<Videojuego> videojuegos;

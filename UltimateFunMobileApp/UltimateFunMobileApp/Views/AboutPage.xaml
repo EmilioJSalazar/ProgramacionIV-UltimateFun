@@ -29,7 +29,7 @@
         </StackLayout-->
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-                <Image Source="homeroAppXa.png" VerticalOptions="Center" HeightRequest="264" />
+                <Image Source="homeroAppXa.png" VerticalOptions="Center" HeightRequest="200" />
 
                 <Label Text="Ultimate Fun" FontSize="Title" TextColor="White"/>
                 <Label Text="Es una aplicación dónde podrás encontrar los títulos de las últimas tendencias en el mundo del entretenimiento o sus próximos lanzamientos y así puedas decidir  fácilmente la opción más divertida y entretenida de pasar tu día, tarde o noche!  Así que…….. ¿Qué deseas hacer hoy?" FontSize="16" Padding="0,0,0,0" TextColor="White"/>
