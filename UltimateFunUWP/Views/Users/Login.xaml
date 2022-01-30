@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="UltimateFunUWP.Views.Users.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UltimateFunUWP.Views.Users"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid HorizontalAlignment="Center" Width="936" VerticalAlignment="Stretch">
+        <StackPanel Margin="240,50,240,50">
+            <TextBlock Text="Login" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold"/>
+            <!--<Image HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,0" VerticalAlignment="Stretch" Source="/Assets/SmallTitle.png"-->
+            <StackPanel Margin="0,50,0,0">
+                <TextBox Name="email" Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" InputScope="EmailSmtpAddress"
+                         PlaceholderText="Email" />
+                <TextBlock Foreground="#FFC43131" Text="{Binding EmailMessage, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Center"
+                           VerticalAlignment="Stretch" FontStyle="Normal"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,0">
+                <PasswordBox Name="Password" Password="{Binding Password, Mode=TwoWay}" PlaceholderText="Password"/>
+                <TextBlock Foreground="#FFC43131" Text="{Binding PasswordMessage, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Center"
+                           VerticalAlignment="Stretch" />
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
