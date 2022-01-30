@@ -147,12 +147,17 @@
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\NavHelper.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
+    <Compile Include="Library\CommandHandler.cs" />
+    <Compile Include="Library\TextBoxEvent.cs" />
+    <Compile Include="Models\PropertyChangedNotification.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultActivationHandler.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\ThemeSelectorService.cs" />
     <Compile Include="ViewModels\CancionesViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\PeliculasViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -197,6 +202,9 @@
     </Compile>
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Users\Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
@@ -299,6 +307,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Users\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Users\Registro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -348,7 +360,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
-    <None Include="UltimateFunUWP_TemporaryKey.pfx" />
+    <None Include="UltimateFunUWP_TemporaryKeyNew.snk" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -357,6 +369,14 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LoginConnection\LoginConnection.csproj">
+      <Project>{6fbee214-cce2-43de-945e-a407b9aae0c9}</Project>
+      <Name>LoginConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoginModelsUWP\LoginModelsUWP.csproj">
+      <Project>{3aeae529-bc6c-4fb6-b3cc-b4d98ba4f42c}</Project>
+      <Name>LoginModelsUWP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UltimateFunUWP.Core\UltimateFunUWP.Core.csproj">
       <Project>{40EB066D-7876-43D0-BC17-496D728C574E}</Project>
       <Name>UltimateFunUWP.Core</Name>
@@ -370,7 +390,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>UltimateFunUWP_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>UltimateFunUWP_TemporaryKeyNew.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
