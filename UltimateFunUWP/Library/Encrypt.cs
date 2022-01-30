@@ -9,11 +9,11 @@ namespace UltimateFunUWP.Library
 {
     public class Encrypt
     {
-        private static RijndaelManaged rm;
+        private static RijndaelManaged rm = new RijndaelManaged();
 
         public Encrypt()
         {
-            rm = new RijndaelManaged();
+            
             rm.Mode = CipherMode.CBC;
             rm.Padding = PaddingMode.PKCS7;
             rm.KeySize = 0x80;

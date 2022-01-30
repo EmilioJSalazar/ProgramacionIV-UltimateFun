@@ -23,12 +23,16 @@ namespace UltimateFunUWP.ViewModels
         private Frame rootFrame = Window.Current.Content as Frame;
         private Connections _conn;
         private SQLiteConnections _sqlite;
+
+        
         public LoginViewModel(object[] campos)
         {
             _textBoxEmail = (TextBox)campos[0];
             _textBoxPass = (PasswordBox)campos[1];
             _conn = new Connections();
             _sqlite = new SQLiteConnections();
+
+            //var pass = Encrypt.EncryptData("123456","patty.zurita@yahoo.com");
         }
 
         public ICommand IniciarCommand
@@ -62,14 +66,23 @@ namespace UltimateFunUWP.ViewModels
                     {
                         try
                         {
-                            var user = _conn.TUsers.Where(u => u.Email.Equals(Email) && u.Password.Equals(Password)).ToList();
+                            var user = _conn.TUsers.Where(u => u.Email.Equals(Email)).ToList();
 
                             if (0 < user.Count)
                             {
-                                var dataUser = user.ElementAt(0);
-                                dataUser.Date = DateTime.Now.ToString("dd/MM/yyy");
-                                _sqlite.Connection.Insert(dataUser);
-                                rootFrame.Navigate(typeof(HomePage));
+                                var pass = Encrypt.DecryptData(user[0].Password, Email);
+                                if (pass.Equals(Password))
+                                {
+                                    var dataUser = user.ElementAt(0);
+                                    dataUser.Date = DateTime.Now.ToString("dd/MM/yyy");
+                                    _sqlite.Connection.Insert(dataUser);
+                                    rootFrame.Navigate(typeof(HomePage));
+                                }
+                                else
+                                {
+                                    Message = "Contraseña o email incorrectos";
+                                }
+                                
                             }
                             else
                             {
