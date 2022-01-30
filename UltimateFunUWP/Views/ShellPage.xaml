@@ -8,6 +8,7 @@
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     xmlns:helpers="using:UltimateFunUWP.Helpers"
     xmlns:views="using:UltimateFunUWP.Views"
+    xmlns:users="using:UltimateFunUWP.Views.Users"
     xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d">
@@ -32,7 +33,7 @@
             Or to use an IconElement instead of a Symbol see https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/projectTypes/navigationpane.md
             Edit String/en-US/Resources.resw: Add a menu item title for each page
             -->
-            <winui:NavigationViewItem x:Uid="Shell_Users" Icon="Contact" helpers:NavHelper.NavigateTo="views:UsersPage" />
+            <winui:NavigationViewItem x:Uid="Shell_Users" Icon="Contact" helpers:NavHelper.NavigateTo="users:Login" />
             <winui:NavigationViewItem x:Uid="Shell_Home" Icon="Home" helpers:NavHelper.NavigateTo="views:HomePage" />
             <winui:NavigationViewItem x:Uid="Shell_Peliculas" Icon="Video" helpers:NavHelper.NavigateTo="views:PeliculasPage" />
             <winui:NavigationViewItem x:Uid="Shell_Videojuegos" Icon="XboxOneConsole" helpers:NavHelper.NavigateTo="views:VideojuegosPage" />

@@ -10,7 +10,7 @@
 
     <Grid HorizontalAlignment="Center" Width="936" VerticalAlignment="Stretch">
         <StackPanel Margin="240,50,240,50">
-            <TextBlock Text="Login" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold"/>
+            <TextBlock Text="Iniciar Sesión" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold"/>
             <!--<Image HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,0" VerticalAlignment="Stretch" Source="/Assets/SmallTitle.png"-->
             <StackPanel Margin="0,50,0,0">
                 <TextBox Name="email" Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" InputScope="EmailSmtpAddress"
@@ -26,6 +26,11 @@
 
             </StackPanel>
 
+            <Button Content="Iniciar" Command="{Binding IniciarCommand}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <TextBlock Text="{Binding Message, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,25,0,0"
+                       VerticalAlignment="Stretch"/>
+            <TextBlock Text="UltimateFUN" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,50,0,0"
+                       VerticalAlignment="Stretch"/>
         </StackPanel>
 
     </Grid>

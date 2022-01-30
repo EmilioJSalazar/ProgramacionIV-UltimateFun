@@ -46,7 +46,7 @@ namespace UltimateFunUWP
 
         private ActivationService CreateActivationService()
         {
-            return new ActivationService(this, typeof(Views.UsersPage), new Lazy<UIElement>(CreateShell));
+            return new ActivationService(this, typeof(Views.Users.Login), new Lazy<UIElement>(CreateShell));
         }
 
         private UIElement CreateShell()
