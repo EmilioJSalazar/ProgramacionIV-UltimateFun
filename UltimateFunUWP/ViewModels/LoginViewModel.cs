@@ -9,6 +9,7 @@ using UltimateFunUWP.Models;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using LoginConnection;
+using LoginModelsUWP;
 
 namespace UltimateFunUWP.ViewModels
 {
@@ -56,7 +57,9 @@ namespace UltimateFunUWP.ViewModels
                     }
                     else
                     {
+                        var user = _conn.TUsers.Where(u => u.Email.Equals(Email) && u.Password.Equals(Password)).ToList();
 
+                        var d = user.Count;
                     }
                 }
                 else
