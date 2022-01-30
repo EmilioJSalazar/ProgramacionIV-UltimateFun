@@ -10,8 +10,8 @@ namespace LoginConnection
 {
     public class Connections : DataConnection
     {
-        public Connections(): base(new SqlServerDataProvider("",SqlServerVersion.v2017),
-            "Data Source=DESKTOP-SL1SN3F\\SQLEXPRESS;Database=EntreteniminetoBD;Integrated Security=True;")
+        public Connections(): base(new SqlServerDataProvider("",SqlServerVersion.v2012),
+            "Data Source=DESKTOP-SL1SN3F\\SQLEXPRESS;Database=EntreteniminetoBDrespaldo;Integrated Security=True;")
         {
 
         }
