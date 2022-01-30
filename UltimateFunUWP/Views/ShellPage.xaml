@@ -38,6 +38,8 @@
             <winui:NavigationViewItem x:Uid="Shell_Peliculas" Icon="Video" helpers:NavHelper.NavigateTo="views:PeliculasPage" />
             <winui:NavigationViewItem x:Uid="Shell_Videojuegos" Icon="XboxOneConsole" helpers:NavHelper.NavigateTo="views:VideojuegosPage" />
             <winui:NavigationViewItem x:Uid="Shell_Canciones" Icon="Audio" helpers:NavHelper.NavigateTo="views:CancionesPage" />
+            <winui:NavigationViewItemSeparator/>
+            <winui:NavigationViewItem Icon="ClosePane" Content="Cerrar Sesión" Tag="Close" />
         </winui:NavigationView.MenuItems>
         <i:Interaction.Behaviors>
             <behaviors:NavigationViewHeaderBehavior
