@@ -1,5 +1,7 @@
-﻿using System;
-
+﻿using LoginConnection;
+using LoginModelsUWP;
+using System;
+using System.Linq;
 using UltimateFunUWP.Services;
 
 using Windows.ApplicationModel.Activation;
@@ -9,6 +11,9 @@ namespace UltimateFunUWP
 {
     public sealed partial class App : Application
     {
+        public static FrameworkElement mContentFrame { get; set; }
+        private SQLiteConnections _sqlite = new SQLiteConnections();
+        private String date = DateTime.Now.ToString("dd/MM/yyy");
         private Lazy<ActivationService> _activationService;
 
         private ActivationService ActivationService
@@ -46,7 +51,17 @@ namespace UltimateFunUWP
 
         private ActivationService CreateActivationService()
         {
-            return new ActivationService(this, typeof(Views.Users.Login), new Lazy<UIElement>(CreateShell));
+            var user = _sqlite.Connection.Table<TUsers>().Where(u => u.Date.Equals(date)).ToList();
+            if (0 < user.Count)
+            {
+                return new ActivationService(this, typeof(Views.HomePage), new Lazy<UIElement>(CreateShell));
+            }
+            else
+            {
+                _sqlite.Connection.DeleteAll<TUsers>();
+                return new ActivationService(this, typeof(Views.Users.Login), new Lazy<UIElement>(CreateShell));
+            }
+            
         }
 
         private UIElement CreateShell()

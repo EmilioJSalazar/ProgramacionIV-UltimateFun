@@ -25,7 +25,7 @@
         IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
         SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
         IsSettingsVisible="True"
-        Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
+        Background="{ThemeResource SystemControlBackgroundAltHighBrush}" SelectionChanged="NavView_SelectionChanged">
         <winui:NavigationView.MenuItems>
             <!--
             TODO WTS: Change the symbols for each item as appropriate for your app
@@ -39,8 +39,10 @@
             <winui:NavigationViewItem x:Uid="Shell_Videojuegos" Icon="XboxOneConsole" helpers:NavHelper.NavigateTo="views:VideojuegosPage" />
             <winui:NavigationViewItem x:Uid="Shell_Canciones" Icon="Audio" helpers:NavHelper.NavigateTo="views:CancionesPage" />
             <winui:NavigationViewItemSeparator/>
-            <winui:NavigationViewItem Icon="ClosePane" Content="Cerrar Sesión" Tag="Close" />
+            <winui:NavigationViewItem Icon="ClosePane" Content="Cerrar Sesión" Tag="Close"  />
         </winui:NavigationView.MenuItems>
+
+        
         <i:Interaction.Behaviors>
             <behaviors:NavigationViewHeaderBehavior
                 DefaultHeader="{x:Bind ViewModel.Selected.Content, Mode=OneWay}">
@@ -60,7 +62,13 @@
             </ic:EventTriggerBehavior>
         </i:Interaction.Behaviors>
         <Grid>
-            <Frame x:Name="shellFrame" />
+            <Frame x:Name="ContentFrame" Margin="24">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition/>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
         </Grid>
     </winui:NavigationView>
 </Page>
