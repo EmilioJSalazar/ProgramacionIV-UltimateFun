@@ -38,8 +38,31 @@ namespace UltimateFunUWP.ViewModels
 
         private async Task iniciarAsync()
         {
-            var data = Email;
+            if (Email == null || Email.Equals(""))
+            {
+                EmailMessage = "Ingrese el email";
+                _textBoxEmail.Focus(FocusState.Programmatic);
+            }
+            else
+            {
+                if (TextBoxEvent.IsValidEmail(Email))
+                {
+                    if(Password == null || Password.Equals(""))
+                    {
+                        PasswordMessage = "Ingrese el password";
+                        _textBoxPass.Focus(FocusState.Programmatic);
+                    }
+                    else
+                    {
 
+                    }
+                }
+                else
+                {
+                    EmailMessage = "El email no es valido";
+                    _textBoxEmail.Focus(FocusState.Programmatic);
+                }
+            }
         }
     }
 }
