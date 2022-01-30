@@ -8,6 +8,7 @@ using UltimateFunUWP.Library;
 using UltimateFunUWP.Models;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using LoginConnection;
 
 namespace UltimateFunUWP.ViewModels
 {
@@ -18,11 +19,12 @@ namespace UltimateFunUWP.ViewModels
         private PasswordBox _textBoxPass;
         private String date = DateTime.Now.ToString("dd/MM/yyy");
         private Frame rootFrame = Window.Current.Content as Frame;
-
+        private Connections _conn;
         public LoginViewModel(object[] campos)
         {
             _textBoxEmail = (TextBox)campos[0];
             _textBoxPass = (PasswordBox)campos[1];
+            _conn = new Connections();
         }
 
         public ICommand IniciarCommand
