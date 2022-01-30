@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UltimateFunUWP.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,9 @@ namespace UltimateFunUWP.Views.Users
         public Login()
         {
             this.InitializeComponent();
+
+            Object[] campos = { Email, Password };
+            DataContext = new LoginViewModel(campos);
         }
     }
 }

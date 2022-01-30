@@ -13,7 +13,7 @@
             <TextBlock Text="Iniciar Sesión" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold"/>
             <!--<Image HorizontalAlignment="Stretch" Height="100" Margin="0,0,0,0" VerticalAlignment="Stretch" Source="/Assets/SmallTitle.png"-->
             <StackPanel Margin="0,50,0,0">
-                <TextBox Name="email" Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" InputScope="EmailSmtpAddress"
+                <TextBox Name="Email" Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" InputScope="EmailSmtpAddress"
                          PlaceholderText="Email" />
                 <TextBlock Foreground="#FFC43131" Text="{Binding EmailMessage, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Center"
                            VerticalAlignment="Stretch" FontStyle="Normal"/>
