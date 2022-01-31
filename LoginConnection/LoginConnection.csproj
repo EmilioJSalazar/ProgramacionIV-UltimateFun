@@ -164,7 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LoginModelsUWP\LoginModelsUWP.csproj">
-      <Project>{3AEAE529-BC6C-4FB6-B3CC-B4D98BA4F42C}</Project>
+      <Project>{3aeae529-bc6c-4fb6-b3cc-b4d98ba4f42c}</Project>
       <Name>LoginModelsUWP</Name>
     </ProjectReference>
   </ItemGroup>

@@ -19,6 +19,7 @@ namespace UltimateFunUWP.ViewModels
         private ICommand _command;
         private TextBox _textBoxEmail;
         private PasswordBox _textBoxPass;
+        private ProgressRing _progressRing;
         private String date = DateTime.Now.ToString("dd/MM/yyy");
         private Frame rootFrame = Window.Current.Content as Frame;
         private Connections _conn;
@@ -29,6 +30,7 @@ namespace UltimateFunUWP.ViewModels
         {
             _textBoxEmail = (TextBox)campos[0];
             _textBoxPass = (PasswordBox)campos[1];
+            _progressRing = (ProgressRing)campos[2];
             _conn = new Connections();
             _sqlite = new SQLiteConnections();
 
@@ -66,6 +68,7 @@ namespace UltimateFunUWP.ViewModels
                     {
                         try
                         {
+                            _progressRing.IsActive = true;
                             var user = _conn.TUsers.Where(u => u.Email.Equals(Email)).ToList();
 
                             if (0 < user.Count)
@@ -80,17 +83,20 @@ namespace UltimateFunUWP.ViewModels
                                 }
                                 else
                                 {
+                                    _progressRing.IsActive = false;
                                     Message = "Contraseña o email incorrectos";
                                 }
                                 
                             }
                             else
                             {
+                                _progressRing.IsActive = false;
                                 Message = "Contraseña o email incorrectos";
                             }
                         }
                         catch (Exception ex)
                         {
+                            _progressRing.IsActive = false;
                             Message = ex.Message;
                         }
                        

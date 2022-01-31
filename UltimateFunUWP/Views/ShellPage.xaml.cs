@@ -11,19 +11,15 @@ namespace UltimateFunUWP.Views
     {
         public ShellViewModel ViewModel { get; } = new ShellViewModel();
 
-        MainViewModel _main;
+       
         public ShellPage()
         {
             InitializeComponent();
             DataContext = ViewModel;
-            ViewModel.Initialize(ContentFrame, navigationView, KeyboardAccelerators);
-            _main = new MainViewModel();
+            ViewModel.Initialize(frame, navigationView, KeyboardAccelerators);
+            
         }
 
-        private void NavView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
-        {
-            App.mContentFrame = ContentFrame;
-            _main.NavView_SelectionChanged(sender, args, ContentFrame);
-        }
+        
     }
 }

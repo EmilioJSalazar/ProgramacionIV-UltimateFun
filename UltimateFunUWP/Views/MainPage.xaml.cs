@@ -16,19 +16,28 @@ using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace UltimateFunUWP.Views.Users
+namespace UltimateFunUWP.Views
 {
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class MainPage : Page
     {
-        public Login()
-        {
-            this.InitializeComponent();
 
-            Object[] campos = { Email, Password, ProgressRing };
-            DataContext = new LoginViewModel(campos);
+        MainViewModel _main;
+        public MainPage()
+        {
+            InitializeComponent();
+            _main = new MainViewModel();
+        }
+
+        
+
+        private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            App.mContentFrame = ContentFrame;
+            _main.NavView_SelectionChanged(sender, args, ContentFrame);
         }
     }
+    
 }

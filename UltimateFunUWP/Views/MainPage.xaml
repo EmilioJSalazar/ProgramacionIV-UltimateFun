@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="UltimateFunUWP.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UltimateFunUWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <NavigationView x:Name="NavView" Header="headerString" Margin="9,-3,-9,3"
+                        Background="{ThemeResource SystemControlAcrylicElementBrush}" SelectionChanged="NavView_SelectionChanged">
+
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home" Tag="Home">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE10F;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItemHeader Content="Páginas Principales"/>
+                <NavigationViewItem Icon="Contact" Content="Usuario" Tag="user"/>
+                <NavigationViewItem Icon="Video" Content="Peliculas" Tag="peliculas"/>
+                <NavigationViewItem Icon="XboxOneConsole" Content="Videojuegos" Tag="videojuegos"/>
+                <NavigationViewItem Icon="Audio" Content="Canciones" Tag="canciones"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="ClosePane" Content="Cerrar Sesión" Tag="close"  />
+            </NavigationView.MenuItems>
+
+            <NavigationView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid Margin="10,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                                   FontSize="28"
+                                   VerticalAlignment="Center"
+                                   Text="Ultimate FUN"/>
+                    </Grid>
+                </DataTemplate>
+            </NavigationView.HeaderTemplate>
+            <NavigationView.PaneFooter>
+                <HyperlinkButton x:Name="MoreInfoBtn"
+                                 Content="Más información"
+                                 Margin="12,0"/>
+            </NavigationView.PaneFooter>
+            <Frame x:Name="ContentFrame" Margin="24">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition/>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+
+        </NavigationView>
+    </Grid>
+</Page>

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UltimateFunUWP.Views;
 using UltimateFunUWP.Views.Users;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -19,16 +20,26 @@ namespace UltimateFunUWP.ViewModels
         {
             _sqlite = new SQLiteConnections();
         }
-        public void NavView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender,
-        Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args, Frame contentFrame)
+        public void NavView_SelectionChanged(NavigationView sender,
+        NavigationViewSelectionChangedEventArgs args, Frame contentFrame)
         {
             NavigationViewItem item = args.SelectedItem as NavigationViewItem;
             switch (item.Tag)
             {
-                case "Close":
+                case "close":
                     _sqlite.Connection.DeleteAll<TUsers>();
                     Frame rootFrame = Window.Current.Content as Frame;
                     rootFrame.Navigate(typeof(Login));
+                    break;
+                case "user":
+                    contentFrame.Navigate(typeof(Usuarios));
+
+                    break;
+                case "null":
+                    contentFrame.Navigate(typeof(HomePage));
+                    break;
+                default:
+                    contentFrame.Navigate(typeof(HomePage));
                     break;
             }
         }

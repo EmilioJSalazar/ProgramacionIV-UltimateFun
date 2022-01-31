@@ -29,6 +29,7 @@
             <Button Content="Iniciar" Command="{Binding IniciarCommand}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             <TextBlock Text="{Binding Message, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,25,0,0"
                        VerticalAlignment="Stretch"/>
+            <ProgressRing Name="ProgressRing" Height="50" Width="50"/>
             <TextBlock Text="UltimateFUN" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,50,0,0"
                        VerticalAlignment="Stretch"/>
         </StackPanel>

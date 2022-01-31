@@ -148,6 +148,7 @@
     <Compile Include="Helpers\NavHelper.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
     <Compile Include="Library\CommandHandler.cs" />
+    <Compile Include="Library\Encrypt.cs" />
     <Compile Include="Library\TextBoxEvent.cs" />
     <Compile Include="Models\PropertyChangedNotification.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="ViewModels\CancionesViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PeliculasViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -181,6 +183,9 @@
     </Compile>
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Peliculas\CreatePelicula.xaml.cs">
       <DependentUpon>CreatePelicula.xaml</DependentUpon>
@@ -279,6 +284,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Peliculas\CreatePelicula.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -318,6 +327,10 @@
     <Page Include="Views\Users\UsersPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Users\Usuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Videojuegos\CreateVideojuego.xaml">
       <SubType>Designer</SubType>
@@ -360,6 +373,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <None Include="Patty.snk" />
     <None Include="UltimateFunUWP_TemporaryKeyNew.snk" />
   </ItemGroup>
   <ItemGroup>
@@ -378,11 +392,10 @@
       <Name>LoginModelsUWP</Name>
     </ProjectReference>
     <ProjectReference Include="..\UltimateFunUWP.Core\UltimateFunUWP.Core.csproj">
-      <Project>{40EB066D-7876-43D0-BC17-496D728C574E}</Project>
+      <Project>{40eb066d-7876-43d0-bc17-496d728c574e}</Project>
       <Name>UltimateFunUWP.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
@@ -390,7 +403,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>UltimateFunUWP_TemporaryKeyNew.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Patty.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
