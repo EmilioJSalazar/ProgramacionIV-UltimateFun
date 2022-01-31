@@ -19,9 +19,7 @@
         </ic:EventTriggerBehavior>
     </i:Interaction.Behaviors>
 
-    <winui:NavigationView
-        x:Name="navigationView"
-        IsBackButtonVisible="Visible"
+    <winui:NavigationView x:Name="navigationView" IsBackButtonVisible="Visible"
         IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
         SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
         IsSettingsVisible="True"
@@ -33,14 +31,14 @@
             Or to use an IconElement instead of a Symbol see https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/projectTypes/navigationpane.md
             Edit String/en-US/Resources.resw: Add a menu item title for each page
             -->
-            <winui:NavigationViewItem x:Uid="Shell_Users" Icon="Contact" Content="Usuario" Tag="Usuarios"/>
-            <!--</winui:NavigationViewItem>helpers:NavHelper.NavigateTo="users:Login" />-->
+            <winui:NavigationViewItem x:Uid="Shell_Users" Icon="Contact" helpers:NavHelper.NavigateTo="users:Login"></winui:NavigationViewItem>
+                <!-- />-->
             <winui:NavigationViewItem x:Uid="Shell_Home" Icon="Home" helpers:NavHelper.NavigateTo="views:HomePage" />
             <winui:NavigationViewItem x:Uid="Shell_Peliculas" Icon="Video" helpers:NavHelper.NavigateTo="views:PeliculasPage" />
             <winui:NavigationViewItem x:Uid="Shell_Videojuegos" Icon="XboxOneConsole" helpers:NavHelper.NavigateTo="views:VideojuegosPage" />
             <winui:NavigationViewItem x:Uid="Shell_Canciones" Icon="Audio" helpers:NavHelper.NavigateTo="views:CancionesPage" />
             <winui:NavigationViewItemSeparator/>
-            <winui:NavigationViewItem Icon="ClosePane" Content="Cerrar Sesión" Tag="Close"  />
+            <!--<winui:NavigationViewItem Icon="ClosePane" Content="Cerrar Sesión" Tag="Close"  />-->
         </winui:NavigationView.MenuItems>
 
         

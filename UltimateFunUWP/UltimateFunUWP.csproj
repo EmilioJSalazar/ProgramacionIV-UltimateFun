@@ -164,6 +164,7 @@
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\UsersViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewModels\UsuariosViewModel.cs" />
     <Compile Include="ViewModels\VideojuegosViewModel.cs" />
     <Compile Include="Views\Canciones\CancionesPage.xaml.cs">
@@ -208,6 +209,9 @@
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Users\AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Users\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -216,6 +220,9 @@
     </Compile>
     <Compile Include="Views\Users\UsersPage.xaml.cs">
       <DependentUpon>UsersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\Usuarios.xaml.cs">
+      <DependentUpon>Usuarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Videojuegos\CreateVideojuego.xaml.cs">
       <DependentUpon>CreateVideojuego.xaml</DependentUpon>
@@ -315,6 +322,10 @@
     <Page Include="Views\ShellPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Users\AddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Users\Login.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -35,6 +35,22 @@ namespace UltimateFunUWP.ViewModels
                     contentFrame.Navigate(typeof(Usuarios));
 
                     break;
+                case "home":
+                    contentFrame.Navigate(typeof(HomePage));
+
+                    break;
+                case "peliculas":
+                    contentFrame.Navigate(typeof(PeliculasPage));
+
+                    break;
+                case "videojuegos":
+                    contentFrame.Navigate(typeof(VideojuegosPage));
+
+                    break;
+                case "canciones":
+                    contentFrame.Navigate(typeof(CancionesPage));
+
+                    break;
                 case "null":
                     contentFrame.Navigate(typeof(HomePage));
                     break;

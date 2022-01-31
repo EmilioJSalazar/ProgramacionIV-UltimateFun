@@ -11,7 +11,7 @@ namespace UltimateFunUWP.Library
     {
         private static RijndaelManaged rm = new RijndaelManaged();
 
-        public Encrypt()
+        public static void encrypt()
         {
             
             rm.Mode = CipherMode.CBC;
@@ -22,6 +22,7 @@ namespace UltimateFunUWP.Library
 
         public static string EncryptData(string textData, string Encryptionkey)
         {
+            encrypt();
             byte[] passBytes = Encoding.UTF8.GetBytes(Encryptionkey);
             byte[] EncryptionkeyBytes = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
             int len = passBytes.Length;
@@ -40,6 +41,7 @@ namespace UltimateFunUWP.Library
 
         public static string DecryptData(string EncryptedText, string Encryptionkey)
         {
+            encrypt();
             byte[] encryptedTextBytes = Convert.FromBase64String(EncryptedText);
             byte[] passBytes = Encoding.UTF8.GetBytes(Encryptionkey);
 
