@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UltimateFunUWP.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,7 +25,9 @@ namespace UltimateFunUWP.Views.Users
     {
         public AddUser()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+            Object[] campos = { NID, Name, LastName, Telephone, Email, Password, User };
+            DataContext = new UserViewModel(campos);
         }
     }
 }

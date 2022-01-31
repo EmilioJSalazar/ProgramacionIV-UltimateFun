@@ -30,6 +30,88 @@ namespace UltimateFunUWP.Models
             }
         }
 
+        public string Nid
+        {
+            get { return GetValue(() => Nid); }
+            set
+            {
+                SetValue(() => Nid, value);
+                Message = "";
+            }
+        }
+
+        public string Name
+        {
+            get { return GetValue(() => Name); }
+            set
+            {
+                SetValue(() => Name, value);
+                Message = "";
+            }
+        }
+
+        public string LastName
+        {
+            get { return GetValue(() => LastName); }
+            set
+            {
+                SetValue(() => LastName, value);
+                Message = "";
+            }
+        }
+
+        public string Telephone
+        {
+            get { return GetValue(() => Telephone); }
+            set
+            {
+                SetValue(() => Telephone, value);
+                Message = "";
+            }
+        }
+
+        public string User
+        {
+            get { return GetValue(() => User); }
+            set
+            {
+                SetValue(() => User, value);
+                Message = "";
+            }
+        }
+
+        public List<string> ListRoles
+        {
+            get
+            {
+                return new List<string>
+                {
+                    "Admin","User"
+                };
+            }
+        }
+        public string SelectedRole
+        {
+            get { return GetValue(() => SelectedRole); }
+            set { SetValue(() => SelectedRole, value); }
+        }
+
+        public string UserTitle
+        {
+            get { return GetValue(() => UserTitle); }
+            set
+            {
+                if (UserTitle == null || UserTitle.Equals(""))
+                {
+                    SetValue(() => UserTitle, "Registrar usuarios");
+                }
+                else
+                {
+                    SetValue(() => UserTitle, value);
+                }
+            }
+        }
+
         public string Message
         {
             get { return GetValue(() => Message); }
