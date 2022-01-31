@@ -8,6 +8,7 @@ using System.Windows.Input;
 using UltimateFunUWP.Library;
 using UltimateFunUWP.Models;
 using UltimateFunUWP.Views.Users;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace UltimateFunUWP.ViewModels
@@ -50,7 +51,78 @@ namespace UltimateFunUWP.ViewModels
 
         public async Task RegisterUserAsync()
         {
+            if (Nid == null|| Nid.Equals(""))
+            {
+                UserTitle = "Ingrese el nid";
+                _textBoxNid.Focus(FocusState.Programmatic);
+            }
+            else
+            {
+                if (Name == null || Name.Equals(""))
+                {
+                    UserTitle = "Ingrese el nombre";
+                    _textBoxName.Focus(FocusState.Programmatic);
+                }
+                else
+                {
+                    if (LastName == null || LastName.Equals(""))
+                    {
+                        UserTitle = "Ingrese el apellido";
+                        _textBoxLastName.Focus(FocusState.Programmatic);
+                    }
+                    else
+                    {
+                        if (Telephone == null || Telephone.Equals(""))
+                        {
+                            UserTitle = "Ingrese el numero de telefono";
+                            _textBoxTelephone.Focus(FocusState.Programmatic);
+                        }
+                        else
+                        {
+                            if (Email == null || Email.Equals(""))
+                            {
+                                UserTitle = "Ingrese el Email";
+                                _textBoxEmail.Focus(FocusState.Programmatic);
+                            }
+                            else
+                            {
+                                if (TextBoxEvent.IsValidEmail(Email))
+                                {
+                                   if(Password == null || Password.Equals(""))
+                                    {
+                                        UserTitle = "Ingrese el password";
+                                        _textBoxPass.Focus(FocusState.Programmatic);
+                                    }
+                                    else
+                                    {
+                                        if (User == null || User.Equals(""))
+                                        {
+                                            UserTitle = "Ingrese el usuario";
+                                            _textBoxUser.Focus(FocusState.Programmatic);
+                                        }
+                                        else
+                                        {
+                                            if (SelectedRole == null || SelectedRole.Equals(""))
+                                            {
+                                                UserTitle = "Seleccione un rol";
+                                            }
+                                            else
+                                            {
 
+                                            }
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    UserTitle = "El email no es correcto";
+                                    _textBoxEmail.Focus(Windows.UI.Xaml.FocusState.Programmatic);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

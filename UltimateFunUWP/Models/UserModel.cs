@@ -16,6 +16,7 @@ namespace UltimateFunUWP.Models
                 SetValue(() => Email, value);
                 EmailMessage = "";
                 Message = "";
+                UserTitle = "Registrar usuario";
             }
         }
 
@@ -27,6 +28,7 @@ namespace UltimateFunUWP.Models
                 SetValue(() => Password, value);
                 PasswordMessage = "";
                 Message = "";
+                UserTitle = "Registrar usuario";
             }
         }
 
@@ -37,6 +39,7 @@ namespace UltimateFunUWP.Models
             {
                 SetValue(() => Nid, value);
                 Message = "";
+                UserTitle = "Registrar usuario";
             }
         }
 
@@ -47,6 +50,7 @@ namespace UltimateFunUWP.Models
             {
                 SetValue(() => Name, value);
                 Message = "";
+                UserTitle = "Registrar usuario";
             }
         }
 
@@ -57,6 +61,7 @@ namespace UltimateFunUWP.Models
             {
                 SetValue(() => LastName, value);
                 Message = "";
+                UserTitle = "Registrar usuario";
             }
         }
 
@@ -67,6 +72,7 @@ namespace UltimateFunUWP.Models
             {
                 SetValue(() => Telephone, value);
                 Message = "";
+                UserTitle = "Registrar usuario";
             }
         }
 
@@ -77,6 +83,7 @@ namespace UltimateFunUWP.Models
             {
                 SetValue(() => User, value);
                 Message = "";
+                UserTitle = "Registrar usuario";
             }
         }
 
@@ -93,7 +100,10 @@ namespace UltimateFunUWP.Models
         public string SelectedRole
         {
             get { return GetValue(() => SelectedRole); }
-            set { SetValue(() => SelectedRole, value); }
+            set {
+                SetValue(() => SelectedRole, value);
+                UserTitle = "Registrar usuario";
+            }
         }
 
         public string UserTitle

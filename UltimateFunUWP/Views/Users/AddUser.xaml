@@ -59,27 +59,27 @@
                     <StackPanel Margin="5,5,5,5">
                         <TextBox x:Name="NID" Text="{Binding Nid,
                             Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="NID"
-                                 BorderThickness="1,1,1,1" InputScope="Number"/>
+                                 BorderThickness="1,1,1,1" InputScope="Number" PreviewKeyDown="NID_PreviewKeyDown"/>
 
                     </StackPanel>
 
                     <StackPanel Margin="5,5,5,5">
                         <TextBox x:Name="Name" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Nombre"
-                                 BorderThickness="1,1,1,1" />
+                                 BorderThickness="1,1,1,1" PreviewKeyDown="Name_PreviewKeyDown" />
 
                     </StackPanel>
 
                     <StackPanel Margin="5,5,5,5">
                         <TextBox x:Name="LastName" Text="{Binding LastName,
                             Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Apellido"
-                                 BorderThickness="1,1,1,1" />
+                                 BorderThickness="1,1,1,1" PreviewKeyDown="LastName_PreviewKeyDown" />
 
                     </StackPanel>
 
                     <StackPanel Margin="5,5,5,5">
                         <TextBox x:Name="Telephone" Text="{Binding Telephone,
                             Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Telefono"
-                                 BorderThickness="1,1,1,1" InputScope="TelephoneNumber" />
+                                 BorderThickness="1,1,1,1" InputScope="TelephoneNumber" PreviewKeyDown="Telephone_PreviewKeyDown" />
 
                     </StackPanel>
                     <StackPanel Margin="5,5,5,5">
