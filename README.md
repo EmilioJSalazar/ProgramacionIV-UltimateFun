@@ -145,3 +145,39 @@ Ejecutar soluciones:
  ![image](https://user-images.githubusercontent.com/62667937/147863295-8b392e2f-4412-40a9-ba56-59d658d39aa5.png)
 
 
+# UltimateFun APP Móvil
+
+1. Abrir el explorador de archivos y abrir la carpeta donde se encuentra el proyecto
+2. Abrir la carpeta .vs
+
+![image](https://user-images.githubusercontent.com/62667937/151725200-02f830b4-7d45-4b3a-9b3d-315314754d2f.png)
+
+
+3. Abrir la carpeta UltimateFun/config y finalmete abrir el archivo applicationhost.config
+
+![image](https://user-images.githubusercontent.com/62667937/151725276-51454b45-e922-4367-87a9-a12054e179f1.png)
+
+
+4. Dentro del archivo, modificar el binding con el protocolo 54386  cambiar la palabra localhost por 127.0.0.1
+
+![image](https://user-images.githubusercontent.com/62667937/151725396-a6747eae-1b37-443b-866c-1a1ec898041a.png)
+
+
+5. Guardar los cambios  
+6. Depurar la API 
+
+![image](https://user-images.githubusercontent.com/62667937/151725486-5cb306c5-98ba-499d-9a71-fa0ddf98a229.png)
+
+
+7. Depurar la App Móvil 
+8. Abrir la API en el emulador con el Uri => http://10.0.2.2:54386
+
+![image](https://user-images.githubusercontent.com/62667937/151725623-2f1d18c1-304a-4dc6-9210-fe805aa7a285.png)
+
+
+9. Listo! podrás utilizar la app sin problemas
+
+
+![image](https://user-images.githubusercontent.com/62667937/151725671-d13238a6-5e4e-4e84-9112-df0e1afb5481.png)
+
+
