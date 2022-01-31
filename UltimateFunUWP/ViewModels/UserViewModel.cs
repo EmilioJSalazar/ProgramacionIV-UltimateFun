@@ -1,4 +1,5 @@
-﻿using LoginConnection;
+﻿using LinqToDB;
+using LoginConnection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,13 +37,13 @@ namespace UltimateFunUWP.ViewModels
             _textBoxPass = (TextBox)campos[6];
             _conn = new Connections();
         }
-        public ICommand AddCommand
-        {
-            get
-            {
-                return new CommandHandler(() => App.mContentFrame.Navigate(typeof(AddUser)));
-            }
-        }
+        //public ICommand AddCommand
+        //{
+        //    get
+        //    {
+        //        return new CommandHandler(() => App.mContentFrame.Navigate(typeof(AddUser)));
+        //    }
+        //}
 
         public ICommand AddUser
         {
@@ -108,7 +109,7 @@ namespace UltimateFunUWP.ViewModels
                                             }
                                             else
                                             {
-
+                                                SaveData();
                                             }
                                         }
                                     }
@@ -124,5 +125,22 @@ namespace UltimateFunUWP.ViewModels
                 }
             }
         }
+        private void SaveData()
+        {
+            _conn.TUsers.Value(u => u.NID, Nid)
+                .Value(u => u.Name, Name)
+                .Value(u => u.LastName, LastName)
+                .Value(u => u.Telephone, Telephone)
+                .Value(u => u.Email, Email)
+                .Value(u => u.Password, Encrypt.EncryptData(Password,Email))
+                .Value(u => u.Users, User)
+                .Value(u => u.Role, SelectedRole)
+                .Value(u => u.Date, DateTime.Now.ToString("dd/MM/yyy"))
+                .Insert();
+            //App.mContentFrame.Navigate(typeof(Usuarios));
+        }
     }
+    
 }
+
+
