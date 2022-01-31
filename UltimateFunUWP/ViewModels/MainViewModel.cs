@@ -32,7 +32,7 @@ namespace UltimateFunUWP.ViewModels
                     rootFrame.Navigate(typeof(Login));
                     break;
                 case "user":
-                    contentFrame.Navigate(typeof(Usuarios));
+                    contentFrame.Navigate(typeof(UsersPage));
 
                     break;
                 case "home":

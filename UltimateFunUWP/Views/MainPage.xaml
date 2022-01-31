@@ -26,7 +26,7 @@
                 <NavigationViewItem Icon="XboxOneConsole" Content="Videojuegos" Tag="videojuegos"/>
                 <NavigationViewItem Icon="Audio" Content="Canciones" Tag="canciones"/>
                 <NavigationViewItemSeparator/>
-                <NavigationViewItem Icon="ClosePane" Content="Cerrar Sesión" Tag="close"  />
+                <!--<NavigationViewItem Icon="ClosePane" Content="Cerrar Sesión" Tag="close"  />-->
             </NavigationView.MenuItems>
 
             <NavigationView.HeaderTemplate>

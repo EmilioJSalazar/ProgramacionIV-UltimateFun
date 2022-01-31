@@ -37,20 +37,20 @@ namespace UltimateFunUWP.ViewModels
             _textBoxPass = (TextBox)campos[6];
             _conn = new Connections();
         }
-        //public ICommand AddCommand
-        //{
-        //    get
-        //    {
-        //        return new CommandHandler(() => App.mContentFrame.Navigate(typeof(AddUser)));
-        //    }
-        //}
+        public ICommand AddCommand
+        {
+            get
+            {
+                return new CommandHandler(() => App.mContentFrame.Navigate(typeof(AddUser)));
+            }
+        }
 
         public ICommand AddUser
         {
-            get { return new CommandHandler(async () => await RegisterUserAsync()); }
+            get { return new CommandHandler(async () => RegisterUserAsync()); }
         }
 
-        public async Task RegisterUserAsync()
+        public void RegisterUserAsync()
         {
             if (Nid == null|| Nid.Equals(""))
             {
@@ -127,17 +127,27 @@ namespace UltimateFunUWP.ViewModels
         }
         private void SaveData()
         {
-            _conn.TUsers.Value(u => u.NID, Nid)
+            var user = _conn.TUsers.Where(u => u.Email.Equals(Email)).ToList();
+            if (user.Count.Equals(0))
+            {
+                _conn.TUsers.Value(u => u.NID, Nid)
                 .Value(u => u.Name, Name)
                 .Value(u => u.LastName, LastName)
                 .Value(u => u.Telephone, Telephone)
                 .Value(u => u.Email, Email)
-                .Value(u => u.Password, Encrypt.EncryptData(Password,Email))
+                .Value(u => u.Password, Encrypt.EncryptData(Password, Email))
                 .Value(u => u.Users, User)
                 .Value(u => u.Role, SelectedRole)
                 .Value(u => u.Date, DateTime.Now.ToString("dd/MM/yyy"))
                 .Insert();
-            //App.mContentFrame.Navigate(typeof(Usuarios));
+                App.mContentFrame.Navigate(typeof(Usuarios));
+            }
+            else
+            {
+                UserTitle = "El email ya está registrado";
+                _textBoxEmail.Focus(FocusState.Programmatic);
+            }
+            
         }
     }
     
