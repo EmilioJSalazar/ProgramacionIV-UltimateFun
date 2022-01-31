@@ -17,7 +17,27 @@ namespace UltimateFunUWP.Library
         public static void textPreviewKeyDown(KeyRoutedEventArgs e)
         {
             var code = e.KeyStatus;
+            if (71 <= code.ScanCode && 83>code.ScanCode||2<=code.ScanCode && 11 >= code.ScanCode)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
 
+        public static void numberPreviewKeyDown(KeyRoutedEventArgs e)
+        {
+            var code = e.KeyStatus;
+            if (71 <= code.ScanCode && 83 > code.ScanCode || 2 <= code.ScanCode && 11 >= code.ScanCode)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -33,22 +33,22 @@ namespace UltimateFunUWP.Views.Users
 
         private void NID_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
         {
-            TextBoxEvent.textPreviewKeyDown(e);
+            TextBoxEvent.numberPreviewKeyDown(e);
         }
 
         private void Name_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
         {
-
+            TextBoxEvent.textPreviewKeyDown(e);
         }
 
         private void LastName_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
         {
-
+            TextBoxEvent.textPreviewKeyDown(e);
         }
 
         private void Telephone_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
         {
-
+            TextBoxEvent.numberPreviewKeyDown(e);
         }
     }
 }

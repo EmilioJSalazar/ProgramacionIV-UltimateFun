@@ -54,7 +54,7 @@ namespace UltimateFunUWP
             var user = _sqlite.Connection.Table<TUsers>().Where(u => u.Date.Equals(date)).ToList();
             if (0 < user.Count)
             {
-                return new ActivationService(this, typeof(Views.HomePage), new Lazy<UIElement>(CreateShell));
+                return new ActivationService(this, typeof(Views.MainPage), new Lazy<UIElement>(CreateShell));
             }
             else
             {
